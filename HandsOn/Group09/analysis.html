@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <title>Analysis Dataset Group09. Most Iconic monuments in Madrid.</title>
+  <h1>Analysis</h1>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding:8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+  <body>
+
+    <p>
+        The Madrid Monuments dataset contains information on the name of the monuments information on the name of the different monuments,
+         when they were built, when they were built, their author and where they are, 
+        both with street and number as well as through their coordinates<br />
+    </p>
+    <h2>Data Analysis:</h2>
+
+    <table>
+    <tr>
+        <th>NAME: <th>String</th>
+            <th>It is the name of the monuments</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>DATE: <th>String</th>
+            <th>It is the date on which the monument was founded.</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>TYPE: <th>String</th>
+            <th>It the type of monument. EX: Statue</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>DESCRIPTION: <th>String</th>
+            <th>It contains some descriptions of the monument</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>AUTHORS: <th>String</th>
+            <th>It contains the name of the authors of the monument</th>
+        </th>
+    </tr>
+    <tr>
+        <th>CONTENT-URL: <th>String</th>
+            <th>It contains a url to the webpage that has information about the monument</th>
+        </th>
+    </tr>
+    <tr>
+        <th>STREET-NAME: <th>String</th>
+            <th>It contains the name of the street where the monument is located</th>
+        </th>
+    </tr>
+    <tr>
+        <th>CLASE-VIAL: <th>String</th>
+            <th>It contains the type of the street where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>NUM: <th>String</th>
+            <th>It contains the street number where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>NEIGHBORHOOD: <th>String</th>
+            <th>It contains the name of the neighborhood where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>PROVINCE: <th>String</th>
+            <th>It contains the name of the province where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>ZIP-CODE: <th>String</th>
+            <th>It contains the zip-code where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>DISTRICT: <th>String</th>
+            <th>It contains the name of the district where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>X-COORDINATE: <th>INT</th>
+            <th>It contains the x-coordinate where the monument is located</th>
+        </th>
+    </tr>
+
+    <tr>
+        <th>Y-COORDINATE: <th>INT</th>
+            <th>It contains the y-coordinate where the monument is located</th>
+        </th>
+    </tr>
+    </table>
+    <h2>License</h2>
+    <p>
+    All datasets that we have chosen has a license that allows the reuse of documents for commercial and non-commercial purposes. More information about it is located in
+     <a href="https://datos.madrid.es/egob/catalogo/aviso-legal">Aviso legal</a>  This license has been publish in the open data web of Madrid's town hall, which is the owner of this license.
+    </p>
+    <p>Our generated dataset is licensed under the <a href="http://purl.org/NET/rdflicense/cc-by-nc-sa4.0">license CC BY-NC-SA 4.0 International</a>. And its general conditions for its reuse are:</p>
+    <ul>
+    <li> Forbidden to alter the meaning of the information.</li>
+    <li> The source of the documents to be reused must be cited.</li>
+    <li> The date of the last update of the documents to be reused must be mentioned.</li>
+    <li> It will not be possible to  suggest that the Madrid City Council participates, sponsors or supports the reuse of the information.</li>
+    <li> The metadata must be kept, not altered or deleted.</li>
+    <li> In the case of anonymized information, it is expressly forbidden to carry out tasks of re-identification of people from these data.</li>
+    </ul>
+    <h2>Resource naming strategy</h2>
+    <h3>Domain:</h3>
+    <a href="http://madridturistsites.es">http://madridturistsites.es</a>
+        
+    <!---  Path:"v1" -->
+      <h3>For ontologies purposes, the URI's follows these structures:</h3>
+      <ul>
+        <li><a href="http://madridturistsites.es/[Class]">http://madridturistsites.es/v1/ontology#[Class]</a></li>
+        <li><a href="http://madridturistsites.es/ontology#[Property]">http://madridturistsites.es/v1/ontology/properties#[Property]</a></li>
+      </ul>
+      <h3>For access to the individual's resource path:</h3>
+        <ul>
+            <li><a href="http://madridturistsites.es/v1/resource/[Class]/[id]">http://madridturistsites.es/v1/resource/[Class]/[id]</a></li>
+         </ul>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+prefixes:
+ rr: "http://www.w3.org/ns/r2rml#"
+ ns: "http://madridturistsites.es/"
+ rml: "http://semweb.mmlab.be/ns/rml#"
+ owl: "http://www.w3.org/2002/07/owl#"
+ rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xml: "http://www.w3.org/XML/1998/namespace"
+ xsd: "http://www.w3.org/2001/XMLSchema#"
+ rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+
+mappings:
+  TriplesMapAllData:
+    sources:
+      - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
+    s: ns:$(SUBTIPO)/$(PK)
+    po:
+      - [a, ns:$(SUBTIPO)]
+      - [ns:nombre, $(NOMBRE)]
+      - [ns:descripción,$(DESCRIPCION)]
+      - [ns:construidoEn,$(FECHA)]
+      - [ns:autor,$(AUTOR 1)]
+      - [owl:sameAs, $(IGUAL_A_AUTOR1)~iri] 
+      - [ns:autor,$(AUTOR 2)]
+      - [owl:sameAs, $(IGUAL_A_AUTOR2)~iri] 
+      - [ns:autor,$(AUTOR 3)]
+      - [owl:sameAs, $(IGUAL_A_AUTOR3)~iri] 
+      - [ns:autor,$(AUTOR 4)]
+      - [ns:autor,$(AUTOR 5)]
+      - [ns:autor,$(AUTOR 6)]
+      - [ns:autor,$(AUTOR 7)]
+      - [ns:autor,$(AUTOR 8)]
+      - [ns:autor,$(AUTOR 9)]
+      - [ns:autor,$(AUTOR 10)]
+      - [ns:autor,$(AUTOR 11)]
+      - [ns:autor,$(AUTOR 12)]
+      - [ns:autor,$(AUTOR 13)]
+      - [ns:autor,$(AUTOR 14)]
+      - [ns:autor,$(AUTOR 15)]
+      - [ns:autor,$(AUTOR 16)]
+      - [ns:autor,$(AUTOR 17)]
+      - [ns:autor,$(AUTOR 18)]
+      - [ns:autor,$(AUTOR 19)]
+      - [ns:autor,$(AUTOR 20)]
+      - [ns:autor,$(AUTOR 21)]
+      - [ns:autor,$(AUTOR 22)]
+      - [ns:autor,$(AUTOR 23)]
+      - [ns:autor,$(AUTOR 24)]
+      - [ns:autor,$(AUTOR 25)]
+      - [ns:seEncuentraEn, ns:Vía/$(NOMBRE-VIA)]
+      - [ns:tieneLatitud, $(LATITUD)]
+      - [ns:tieneLongitud, $(LONGITUD)]
+
+
+  TriplesMapVia:
+    sources:
+      - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
+    s: ns:Vía/$(NOMBRE-VIA)
+    po:
+      - [a, ns:TipoVía/$(CLASE-VIAL)]
+      - [ns:nombre, $(NOMBRE-VIA)]
+      - [ns:perteneceA, ns:Barrio/$(COD-BARRIO)]
+
+
+  TriplesMapTipoVia:
+    sources:
+      - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
+    s: ns:TipoVía/$(CLASE-VIAL)
+    po:
+      - [a, ns:TipoVía]
+      - [ns:nombre, $(CLASE-VIAL)]
+
+  TriplesMapBarrio:
+    sources:
+      - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
+    s: ns:Barrio/$(COD-BARRIO)
+    po:
+      - [a, ns:Barrio]
+      - [ns:nombre, $(BARRIO)]
+      - [ns:perteneceA, ns:Distrito/$(DISTRITO)]
+      - [owl:sameAs, $(IGUAL_A_BARRIO)~iri] 
+
+  TriplesMapDistrito:
+    sources:
+      - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
+    s: ns:Distrito/$(COD-DISTRITO)
+    po:
+      - [a, ns:Distrito]
+      - [ns:nombre, $(DISTRITO)]
+      - [ns:perteneceA, ns:Localidad/$(LOCALIDAD)]
+      - [ns:codigoPostal, $(CODIGO-POSTAL)]
+      - [owl:sameAs, $(IGUAL_A_DISTRITO)~iri] 
+
+  TriplesMapLocalidad:
+    sources:
+      - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
+    s: ns:Localidad/$(LOCALIDAD)
+    po:
+      - [a, ns:Localidad]
+      - [ns:nombre, $(LOCALIDAD)]
+      - [owl:sameAs, $(IGUAL_A_LOCALIDAD)~iri] 

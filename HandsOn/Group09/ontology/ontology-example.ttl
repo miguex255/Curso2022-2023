@@ -1,0 +1,28 @@
+@prefix : <http://madridturistsites.es/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://madridturistsites.es/>.
+
+
+:Escultura/Victimas  a :Escultura;
+    :nombre "A las víctimas del holocausto"^^xsd:string;
+    :descripción "La obra, creada por el escultor judío de origen sefardí Samuel Nahón, se realizó como homenaje a todas las víctimas del Holocausto nazi durante la Segunda Guerra Mundial. Se trata de un grupo escultórico, fruto de un convenio firmado en 2005 entre el Ayuntamiento y la Comunidad Judía de Madrid, que está ubicado en las proximidades del Jardín de las Tres Culturas (símbolo de la convivencia en España de las civilizaciones hebrea, cristiana y musulmana), concretamente junto al Vergel de los Granados o Jardín Judío. Aunque no corresponde a los trabajos encargados con motivo del Simposium Internacional de Esculturas al Aire Libre organizado por el Ayuntamiento de Madrid en 1991 para la decoración del Parque Juan Carlos I, en la actualidad es una de las piezas (concretamente la n&amp;ordm; 19) que integra la llamada Senda de las Esculturas, un recorrido artístico-didáctico por todo el parque donde el visitante percibe las vinculaciones entre el Arte y la Naturaleza, a través de una serie de creaciones de diferentes escultores que exhiben una gran variedad de propuestas estéticas. El monumento fue inaugurado el 15 de abril de 2007 en un acto solemne al que acudieron, entre otros, el alcalde de Madrid Alberto Ruiz Gallardón, el presidente de la Comunidad Judía en Madrid Jacobo Israel Garzón, el Defensor del Pueblo Enrique Múgica y el embajador de Israel en España Víctor Harel."^^xsd:string;
+    :autor ns:Autor/SamuelNahonBegio;
+    :autor ns:Autor/Alberto;
+    :construidoEn "2005"^^xsd:dateTime;
+    :seEncuentraEn ns:/Dirección/dir1.
+
+
+:Dirección/dir1 a :Dirección;
+    :enVía  :Vía/TresCulturas.
+
+:Vía/TresCulturas a :Vía;
+    :nombre "Tres Culturas"^^xsd:string;
+    :esTipo :TipoVía/Jardín.
+
+:TipoVía/Jarín a :TipoVía;
+    :nombre "Jardín".
+
