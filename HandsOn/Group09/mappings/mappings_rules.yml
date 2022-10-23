@@ -73,7 +73,7 @@ mappings:
     po:
       - [a, ns:Barrio]
       - [ns:nombre, $(BARRIO)]
-      - [ns:perteneceA, ns:Distrito/$(DISTRITO)]
+      - [ns:perteneceA, ns:Distrito/$(COD-DISTRITO)]
 
   TriplesMapDistrito:
     sources:
