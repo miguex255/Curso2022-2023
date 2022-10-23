@@ -171,6 +171,12 @@
 
 ## http://madridturistsites.es/ontolgy/codigoPostal
 
+<<<<<<< HEAD
 :codigoDistrito rdf:type owl:ObjectProperty ;
     rdfs:domain :Distrito;
     rdfs:range xsd:Integer.
+=======
+:codigoPostal rdf:type owl:ObjectProperty ;
+    rdfs:domain :Distrito;
+    rdfs:range xsd:Integer.
+>>>>>>> 363b06f524301caeb6e4a18707c274c5216cac3b
