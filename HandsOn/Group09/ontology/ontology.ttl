@@ -167,3 +167,10 @@
 :codigoDistrito rdf:type owl:ObjectProperty ;
     rdfs:domain :Distrito;
     rdfs:range xsd:Integer.
+
+
+## http://madridturistsites.es/ontolgy/codigoPostal
+
+:codigoPostal rdf:type owl:ObjectProperty ;
+    rdfs:domain :Distrito;
+    rdfs:range xsd:Integer.

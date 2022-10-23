@@ -1,0 +1,1709 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PK",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column PK using expression value.toNumber()"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "SUBTIPO",
+          "expression": "value",
+          "columnName": "SUBTIPO",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Sin datos conocidos."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sin datos conocidos"
+      }
+    ],
+    "description": "Mass edit cells in column FECHA"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Sin datos conocidos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column FECHA"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Ubicada en su emplazamiento en torno a 1972"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Cercano a 1972"
+      }
+    ],
+    "description": "Mass edit cells in column FECHA"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "FECHA",
+          "expression": "value",
+          "columnName": "FECHA",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Circa 1983",
+                "l": "Circa 1983"
+              }
+            },
+            {
+              "v": {
+                "v": "Circa 1850",
+                "l": "Circa 1850"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "grel:value.replace(\"Circa\", \"Cercano a\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FECHA using expression grel:value.replace(\"Circa\", \"Cercano a\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FECHA using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "FECHA",
+          "columnName": "FECHA",
+          "query": "[A-Z,a-z]",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "grel:value.substring(-4)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FECHA using expression grel:value.substring(-4)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "FECHA",
+          "columnName": "FECHA",
+          "query": "[A-Z,a-z]",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FECHA using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "FECHA",
+          "columnName": "FECHA",
+          "query": "[A-Z,a-z]",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "grel:1800",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FECHA using expression grel:1800"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "AUTORES",
+    "newColumnName": "AUTOR",
+    "description": "Rename column AUTORES to AUTOR"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": " - ",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column AUTOR by separator"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "TELEFONO",
+    "description": "Remove column TELEFONO"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "FAX",
+    "description": "Remove column FAX"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "EMAIL",
+    "description": "Remove column EMAIL"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "TIPO",
+    "description": "Remove column TIPO"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Column",
+    "description": "Remove column Column"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "PLANTA",
+    "description": "Remove column PLANTA"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "PUERTA",
+    "description": "Remove column PUERTA"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "ESCALERAS",
+    "description": "Remove column ESCALERAS"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "ORIENTACION",
+    "description": "Remove column ORIENTACION"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "TETUAN"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TETUÁN"
+      }
+    ],
+    "description": "Mass edit cells in column DISTRITO"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "VICALVARO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VICÁLVARO"
+      }
+    ],
+    "description": "Mass edit cells in column DISTRITO"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CHAMBERI"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHAMBERÍ"
+      }
+    ],
+    "description": "Mass edit cells in column DISTRITO"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CHAMARTIN"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHAMARTÍN"
+      }
+    ],
+    "description": "Mass edit cells in column DISTRITO"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "DISTRITO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": ""
+      }
+    ],
+    "description": "Mass edit cells in column DISTRITO"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "PDF",
+    "description": "Remove column PDF"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "CONTENT-URL",
+    "description": "Remove column CONTENT-URL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Avda"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "AVENIDA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "C"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CALLE"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Cta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CARRETERA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Ctra"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CARRETERA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gta"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "GLORIETA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "JARDINES"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "JARDIN"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Paseo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PASEO"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Puente"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PUENTE"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Pte"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PUENTE"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Cdra"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CORREDERA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Me"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MERCADO"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Pº"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PASEO"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Plaza"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PLAZA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Pq"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PARQUE"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "TIPO-NUM",
+    "description": "Remove column TIPO-NUM"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Cmno"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CAMINO"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Col"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "COLONIA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Pza"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PLAZA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Trav"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TRAVESÍA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Rda"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RONDA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CLASE-VIAL",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Vía"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VÍA"
+      }
+    ],
+    "description": "Mass edit cells in column CLASE-VIAL"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE-VIA",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Pablo Neruda",
+          "PABLO NERUDA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PABLO NERUDA"
+      },
+      {
+        "from": [
+          "GUZMAN EL BUENO",
+          "Guzmán el Bueno"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "GUZMAN EL BUENO"
+      },
+      {
+        "from": [
+          "Huertas",
+          "HUERTAS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "HUERTAS"
+      },
+      {
+        "from": [
+          "Recoletos",
+          "RECOLETOS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RECOLETOS"
+      },
+      {
+        "from": [
+          "BETANZOS",
+          "Betanzos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BETANZOS"
+      },
+      {
+        "from": [
+          "MONFORTE DE LEMOS",
+          "Monforte de Lemos"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MONFORTE DE LEMOS"
+      },
+      {
+        "from": [
+          "CASTELLANA",
+          "Castellana"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CASTELLANA"
+      },
+      {
+        "from": [
+          "PADRE HUIDOBRO",
+          "Padre Huidobro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PADRE HUIDOBRO"
+      },
+      {
+        "from": [
+          "Rosaleda",
+          "ROSALEDA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ROSALEDA"
+      },
+      {
+        "from": [
+          "Zarzón",
+          "ZARZON"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ZARZÓN"
+      },
+      {
+        "from": [
+          "Oriente",
+          "ORIENTE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ORIENTE"
+      },
+      {
+        "from": [
+          "Atocha",
+          "ATOCHA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ATOCHA"
+      },
+      {
+        "from": [
+          "General Ricardos",
+          "GENERAL RICARDOS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "GENERAL RICARDOS"
+      },
+      {
+        "from": [
+          "REINA VICTORIA",
+          "Reina Victoria"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "REINA VICTORIA"
+      },
+      {
+        "from": [
+          "VEINTICINCO DE SEPTIEMBRE",
+          "Veinticinco de Septiembre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VEINTICINCO DE SEPTIEMBRE"
+      },
+      {
+        "from": [
+          "CHILE",
+          "Chile"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHILE"
+      },
+      {
+        "from": [
+          "PARTERRE",
+          "Parterre"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PARTERRE"
+      },
+      {
+        "from": [
+          "PROVINCIA",
+          "Provincia"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PROVINCIA"
+      },
+      {
+        "from": [
+          "San Andrés",
+          "SAN ANDRES"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SAN ANDRÉS"
+      },
+      {
+        "from": [
+          "Poblados",
+          "POBLADOS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "POBLADOS"
+      },
+      {
+        "from": [
+          "TOLEDO",
+          "Toledo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TOLEDO"
+      },
+      {
+        "from": [
+          "BOADILLA DEL MONTE",
+          "Boadilla del Monte"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BOADILLA DEL MONTE"
+      },
+      {
+        "from": [
+          "ARMERIA",
+          "Armería"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ARMERÍA"
+      },
+      {
+        "from": [
+          "VICTORIA",
+          "Victoria"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VICTORIA"
+      },
+      {
+        "from": [
+          "VALGAME DIOS",
+          "Válgame Dios"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VALGAME DIOS"
+      },
+      {
+        "from": [
+          "SALESAS",
+          "Salesas"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SALESAS"
+      },
+      {
+        "from": [
+          "SAN ISIDRO",
+          "San Isidro"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SAN ISIDRO"
+      },
+      {
+        "from": [
+          "RUBEN DARIO",
+          "Rubén Darío"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RUBEN DARIO"
+      },
+      {
+        "from": [
+          "MANUEL ALONSO",
+          "Manuel Alonso"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MANUEL ALONSO"
+      },
+      {
+        "from": [
+          "EJERCITO",
+          "Ejército"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "EJÉRCITO"
+      },
+      {
+        "from": [
+          "Francisco y Jacinto Alcántara",
+          "FRANCISCO Y JACINTO ALCANTARA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "FRANCISCO Y JACINTO ALCÁNTARA"
+      },
+      {
+        "from": [
+          "Ramón y Cajal",
+          "RAMON Y CAJAL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAMÓN Y CAJAL"
+      },
+      {
+        "from": [
+          "Arenal",
+          "ARENAL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ARENAL"
+      },
+      {
+        "from": [
+          "Ermita del Santo",
+          "ERMITA DEL SANTO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ERMITA DEL SANTO"
+      },
+      {
+        "from": [
+          "RAIMUNDO FERNANDEZ VILLAVERDE",
+          "Raimundo Fernández Villaverde"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAIMUNDO FERNANDEZ VILLAVERDE"
+      },
+      {
+        "from": [
+          "Entrevías",
+          "ENTREVIAS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ENTREVÍAS"
+      },
+      {
+        "from": [
+          "República Argentina",
+          "REPUBLICA ARGENTINA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "REPÚBLICA ARGENTINA"
+      },
+      {
+        "from": [
+          "Alfonso XII",
+          "ALFONSO XII"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ALFONSO XII"
+      },
+      {
+        "from": [
+          "Principal de Provincias",
+          "PRINCIPAL DE PROVINCIAS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PRINCIPAL DE PROVINCIAS"
+      },
+      {
+        "from": [
+          "EMBAJADORES",
+          "Embajadores"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "EMBAJADORES"
+      },
+      {
+        "from": [
+          "Castelló",
+          "CASTELLO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CASTELLÓ"
+      },
+      {
+        "from": [
+          "Cardenal Herrera Oria",
+          "CARDENAL HERRERA ORIA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CARDENAL HERRERA ORIA"
+      },
+      {
+        "from": [
+          "Arturo Soria",
+          "ARTURO SORIA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ARTURO SORIA"
+      },
+      {
+        "from": [
+          "Complutense",
+          "COMPLUTENSE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "COMPLUTENSE"
+      },
+      {
+        "from": [
+          "RAMIRO DE MAEZTU",
+          "Ramiro de Maeztu"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAMIRO DE MAEZTU"
+      },
+      {
+        "from": [
+          "Doctor Tolosa Latour",
+          "DOCTOR TOLOSA LATOUR"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "DOCTOR TOLOSA LATOUR"
+      },
+      {
+        "from": [
+          "RUPERTO CHAPI",
+          "Ruperto Chapí"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RUPERTO CHAPI"
+      },
+      {
+        "from": [
+          "Gran Vía de Villaverde",
+          "GRAN VIA DE VILLAVERDE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "GRAN VÍA DE VILLAVERDE"
+      },
+      {
+        "from": [
+          "SAN ANTONIO DE LA FLORIDA",
+          "San Antonio de la Florida"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SAN ANTONIO DE LA FLORIDA"
+      },
+      {
+        "from": [
+          "Yeserías",
+          "YESERIAS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "YESERÍAS"
+      },
+      {
+        "from": [
+          "Descalzas",
+          "DESCALZAS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "DESCALZAS"
+      },
+      {
+        "from": [
+          "SEVILLA",
+          "Sevilla"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SEVILLA"
+      },
+      {
+        "from": [
+          "COLOMBIA",
+          "Colombia"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "COLOMBIA"
+      },
+      {
+        "from": [
+          "GINZO DE LIMIA",
+          "Ginzo de Limia"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "GINZO DE LIMIA"
+      },
+      {
+        "from": [
+          "Logroño",
+          "LOGROÑO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LOGROÑO"
+      },
+      {
+        "from": [
+          "CAMOENS Y VALERO",
+          "Camoens y Valero"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CAMOENS Y VALERO"
+      },
+      {
+        "from": [
+          "CAUDILLO",
+          "Caudillo"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CAUDILLO"
+      },
+      {
+        "from": [
+          "Boccherini",
+          "BOCCHERINI"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BOCCHERINI"
+      },
+      {
+        "from": [
+          "FENELON",
+          "Fenelón"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "FENELON"
+      },
+      {
+        "from": [
+          "SIERRA DE ALQUIFE",
+          "Sierra de Alquife"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SIERRA DE ALQUIFE"
+      },
+      {
+        "from": [
+          "PRINCIPE DE VERGARA",
+          "Príncipe de Vergara"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PRINCIPE DE VERGARA"
+      },
+      {
+        "from": [
+          "VILLABLANCA",
+          "Villablanca"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VILLABLANCA"
+      },
+      {
+        "from": [
+          "POETA MANUEL DEL PALACIO",
+          "Poeta Manuel del Palacio"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "POETA MANUEL DEL PALACIO"
+      },
+      {
+        "from": [
+          "López de Hoyos",
+          "LOPEZ DE HOYOS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LÓPEZ DE HOYOS"
+      },
+      {
+        "from": [
+          "Serrano",
+          "SERRANO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SERRANO"
+      },
+      {
+        "from": [
+          "EL SALVADOR",
+          "El Salvador"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "EL SALVADOR"
+      },
+      {
+        "from": [
+          "Colón",
+          "COLON"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "COLÓN"
+      },
+      {
+        "from": [
+          "CASALARREINA",
+          "Casalarreina"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CASALARREINA"
+      },
+      {
+        "from": [
+          "Claudio Coello",
+          "CLAUDIO COELLO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLAUDIO COELLO"
+      },
+      {
+        "from": [
+          "San Jerónimo",
+          "SAN JERONIMO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SAN JERÓNIMO"
+      },
+      {
+        "from": [
+          "SANTA MARIA DE LA CABEZA",
+          "Santa María de la Cabeza"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SANTA MARIA DE LA CABEZA"
+      },
+      {
+        "from": [
+          "Princesa",
+          "PRINCESA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PRINCESA"
+      },
+      {
+        "from": [
+          "PERALES",
+          "Perales"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PERALES"
+      },
+      {
+        "from": [
+          "ALCARRIA",
+          "Alcarria"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ALCARRIA"
+      },
+      {
+        "from": [
+          "ALCALA",
+          "Alcalá"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ALCALA"
+      },
+      {
+        "from": [
+          "Velázquez",
+          "VELAZQUEZ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "VELÁZQUEZ"
+      },
+      {
+        "from": [
+          "Cortes",
+          "CORTES"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CORTES"
+      },
+      {
+        "from": [
+          "CASTILLA",
+          "Castilla"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CASTILLA"
+      },
+      {
+        "from": [
+          "Cruces",
+          "CRUCES"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CRUCES"
+      },
+      {
+        "from": [
+          "Menéndez Pelayo",
+          "MENENDEZ PELAYO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Menéndez Pelayo"
+      },
+      {
+        "from": [
+          "Cuña Verde",
+          "CUÑA VERDE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CUÑA VERDE"
+      },
+      {
+        "from": [
+          "BARCELO",
+          "Barceló"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BARCELO"
+      },
+      {
+        "from": [
+          "Santa Isabel",
+          "SANTA ISABEL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SANTA ISABEL"
+      },
+      {
+        "from": [
+          "Felipe IV",
+          "FELIPE IV"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "FELIPE IV"
+      }
+    ],
+    "description": "Mass edit cells in column NOMBRE-VIA"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "COD-BARRIO",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column COD-BARRIO using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "COORDENADA-Y",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column COORDENADA-Y using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PK",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column PK using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PK",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column PK using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FECHA",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FECHA using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "COD-DISTRITO",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column COD-DISTRITO using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "COD-BARRIO",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column COD-BARRIO using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CODIGO-POSTAL",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column CODIGO-POSTAL using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "COORDENADA-X",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column COORDENADA-X using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LATITUD",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LATITUD using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LONGITUD",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LONGITUD using expression value.toNumber()"
+  }
+]
