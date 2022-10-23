@@ -126,14 +126,14 @@
     
 ## http://madridturistsites.es/ontolgy/tieneLatitud
 
-:tienePosición rdf:type owl:ObjectProperty;
+:tieneLatitud rdf:type owl:ObjectProperty;
     rdfs:domain :Monumento;
     rdfs:range :xsd:integer.
 
 
 ## http://madridturistsites.es/ontolgy/tieneLongitud
 
-:tienePosición rdf:type owl:ObjectProperty;
+:tieneLongitud rdf:type owl:ObjectProperty;
     rdfs:domain :Monumento;
     rdfs:range :xsd:integer.
 
@@ -171,6 +171,12 @@
 
 ## http://madridturistsites.es/ontolgy/codigoPostal
 
+<<<<<<< HEAD
+:codigoDistrito rdf:type owl:ObjectProperty ;
+    rdfs:domain :Distrito;
+    rdfs:range xsd:Integer.
+=======
 :codigoPostal rdf:type owl:ObjectProperty ;
     rdfs:domain :Distrito;
     rdfs:range xsd:Integer.
+>>>>>>> 363b06f524301caeb6e4a18707c274c5216cac3b
