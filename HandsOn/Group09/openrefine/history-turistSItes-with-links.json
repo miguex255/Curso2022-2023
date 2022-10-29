@@ -1,3173 +1,11 @@
 [
   {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "PK",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column PK using expression value.toNumber()"
-  },
-  {
-    "op": "core/row-removal",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "SUBTIPO",
-          "expression": "value",
-          "columnName": "SUBTIPO",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [],
-          "selectBlank": true,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "description": "Remove rows"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Sin datos conocidos."
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "Sin datos conocidos"
-      }
-    ],
-    "description": "Mass edit cells in column FECHA"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Sin datos conocidos"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": ""
-      }
-    ],
-    "description": "Mass edit cells in column FECHA"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Ubicada en su emplazamiento en torno a 1972"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "Cercano a 1972"
-      }
-    ],
-    "description": "Mass edit cells in column FECHA"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "FECHA",
-          "expression": "value",
-          "columnName": "FECHA",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "Circa 1983",
-                "l": "Circa 1983"
-              }
-            },
-            {
-              "v": {
-                "v": "Circa 1850",
-                "l": "Circa 1850"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "grel:value.replace(\"Circa\", \"Cercano a\")",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression grel:value.replace(\"Circa\", \"Cercano a\")"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value.trim()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression value.trim()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "text",
-          "name": "FECHA",
-          "columnName": "FECHA",
-          "query": "[A-Z,a-z]",
-          "mode": "regex",
-          "caseSensitive": false,
-          "invert": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "grel:value.substring(-4)",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression grel:value.substring(-4)"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "text",
-          "name": "FECHA",
-          "columnName": "FECHA",
-          "query": "[A-Z,a-z]",
-          "mode": "regex",
-          "caseSensitive": false,
-          "invert": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value.trim()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression value.trim()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "text",
-          "name": "FECHA",
-          "columnName": "FECHA",
-          "query": "[A-Z,a-z]",
-          "mode": "regex",
-          "caseSensitive": false,
-          "invert": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "grel:1800",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression grel:1800"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "TETUAN"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "TETUÁN"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "VICALVARO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VICÁLVARO"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "CHAMBERI"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CHAMBERÍ"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "CHAMARTIN"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CHAMARTÍN"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "DISTRITO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": ""
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Avda"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "AVENIDA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "C"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CALLE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Cta"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CARRETERA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Ctra"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CARRETERA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Gta"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GLORIETA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "JARDINES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "JARDIN"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Paseo"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PASEO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Puente"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PUENTE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pte"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PUENTE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Cdra"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CORREDERA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Me"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "MERCADO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pº"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PASEO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Plaza"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PLAZA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pq"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PARQUE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Cmno"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CAMINO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Col"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COLONIA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pza"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PLAZA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Trav"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "TRAVESÍA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Rda"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RONDA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Vía"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VÍA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "NOMBRE-VIA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pablo Neruda",
-          "PABLO NERUDA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PABLO NERUDA"
-      },
-      {
-        "from": [
-          "GUZMAN EL BUENO",
-          "Guzmán el Bueno"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GUZMAN EL BUENO"
-      },
-      {
-        "from": [
-          "Huertas",
-          "HUERTAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "HUERTAS"
-      },
-      {
-        "from": [
-          "Recoletos",
-          "RECOLETOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RECOLETOS"
-      },
-      {
-        "from": [
-          "BETANZOS",
-          "Betanzos"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BETANZOS"
-      },
-      {
-        "from": [
-          "MONFORTE DE LEMOS",
-          "Monforte de Lemos"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "MONFORTE DE LEMOS"
-      },
-      {
-        "from": [
-          "CASTELLANA",
-          "Castellana"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASTELLANA"
-      },
-      {
-        "from": [
-          "PADRE HUIDOBRO",
-          "Padre Huidobro"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PADRE HUIDOBRO"
-      },
-      {
-        "from": [
-          "Rosaleda",
-          "ROSALEDA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ROSALEDA"
-      },
-      {
-        "from": [
-          "Zarzón",
-          "ZARZON"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ZARZÓN"
-      },
-      {
-        "from": [
-          "Oriente",
-          "ORIENTE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ORIENTE"
-      },
-      {
-        "from": [
-          "Atocha",
-          "ATOCHA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ATOCHA"
-      },
-      {
-        "from": [
-          "General Ricardos",
-          "GENERAL RICARDOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GENERAL RICARDOS"
-      },
-      {
-        "from": [
-          "REINA VICTORIA",
-          "Reina Victoria"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "REINA VICTORIA"
-      },
-      {
-        "from": [
-          "VEINTICINCO DE SEPTIEMBRE",
-          "Veinticinco de Septiembre"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VEINTICINCO DE SEPTIEMBRE"
-      },
-      {
-        "from": [
-          "CHILE",
-          "Chile"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CHILE"
-      },
-      {
-        "from": [
-          "PARTERRE",
-          "Parterre"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PARTERRE"
-      },
-      {
-        "from": [
-          "PROVINCIA",
-          "Provincia"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PROVINCIA"
-      },
-      {
-        "from": [
-          "San Andrés",
-          "SAN ANDRES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN ANDRÉS"
-      },
-      {
-        "from": [
-          "Poblados",
-          "POBLADOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "POBLADOS"
-      },
-      {
-        "from": [
-          "TOLEDO",
-          "Toledo"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "TOLEDO"
-      },
-      {
-        "from": [
-          "BOADILLA DEL MONTE",
-          "Boadilla del Monte"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BOADILLA DEL MONTE"
-      },
-      {
-        "from": [
-          "ARMERIA",
-          "Armería"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ARMERÍA"
-      },
-      {
-        "from": [
-          "VICTORIA",
-          "Victoria"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VICTORIA"
-      },
-      {
-        "from": [
-          "VALGAME DIOS",
-          "Válgame Dios"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VALGAME DIOS"
-      },
-      {
-        "from": [
-          "SALESAS",
-          "Salesas"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SALESAS"
-      },
-      {
-        "from": [
-          "SAN ISIDRO",
-          "San Isidro"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN ISIDRO"
-      },
-      {
-        "from": [
-          "RUBEN DARIO",
-          "Rubén Darío"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RUBEN DARIO"
-      },
-      {
-        "from": [
-          "MANUEL ALONSO",
-          "Manuel Alonso"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "MANUEL ALONSO"
-      },
-      {
-        "from": [
-          "EJERCITO",
-          "Ejército"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "EJÉRCITO"
-      },
-      {
-        "from": [
-          "Francisco y Jacinto Alcántara",
-          "FRANCISCO Y JACINTO ALCANTARA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "FRANCISCO Y JACINTO ALCÁNTARA"
-      },
-      {
-        "from": [
-          "Ramón y Cajal",
-          "RAMON Y CAJAL"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RAMÓN Y CAJAL"
-      },
-      {
-        "from": [
-          "Arenal",
-          "ARENAL"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ARENAL"
-      },
-      {
-        "from": [
-          "Ermita del Santo",
-          "ERMITA DEL SANTO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ERMITA DEL SANTO"
-      },
-      {
-        "from": [
-          "RAIMUNDO FERNANDEZ VILLAVERDE",
-          "Raimundo Fernández Villaverde"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RAIMUNDO FERNANDEZ VILLAVERDE"
-      },
-      {
-        "from": [
-          "Entrevías",
-          "ENTREVIAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ENTREVÍAS"
-      },
-      {
-        "from": [
-          "República Argentina",
-          "REPUBLICA ARGENTINA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "REPÚBLICA ARGENTINA"
-      },
-      {
-        "from": [
-          "Alfonso XII",
-          "ALFONSO XII"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ALFONSO XII"
-      },
-      {
-        "from": [
-          "Principal de Provincias",
-          "PRINCIPAL DE PROVINCIAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PRINCIPAL DE PROVINCIAS"
-      },
-      {
-        "from": [
-          "EMBAJADORES",
-          "Embajadores"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "EMBAJADORES"
-      },
-      {
-        "from": [
-          "Castelló",
-          "CASTELLO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASTELLÓ"
-      },
-      {
-        "from": [
-          "Cardenal Herrera Oria",
-          "CARDENAL HERRERA ORIA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CARDENAL HERRERA ORIA"
-      },
-      {
-        "from": [
-          "Arturo Soria",
-          "ARTURO SORIA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ARTURO SORIA"
-      },
-      {
-        "from": [
-          "Complutense",
-          "COMPLUTENSE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COMPLUTENSE"
-      },
-      {
-        "from": [
-          "RAMIRO DE MAEZTU",
-          "Ramiro de Maeztu"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RAMIRO DE MAEZTU"
-      },
-      {
-        "from": [
-          "Doctor Tolosa Latour",
-          "DOCTOR TOLOSA LATOUR"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "DOCTOR TOLOSA LATOUR"
-      },
-      {
-        "from": [
-          "RUPERTO CHAPI",
-          "Ruperto Chapí"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RUPERTO CHAPI"
-      },
-      {
-        "from": [
-          "Gran Vía de Villaverde",
-          "GRAN VIA DE VILLAVERDE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GRAN VÍA DE VILLAVERDE"
-      },
-      {
-        "from": [
-          "SAN ANTONIO DE LA FLORIDA",
-          "San Antonio de la Florida"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN ANTONIO DE LA FLORIDA"
-      },
-      {
-        "from": [
-          "Yeserías",
-          "YESERIAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "YESERÍAS"
-      },
-      {
-        "from": [
-          "Descalzas",
-          "DESCALZAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "DESCALZAS"
-      },
-      {
-        "from": [
-          "SEVILLA",
-          "Sevilla"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SEVILLA"
-      },
-      {
-        "from": [
-          "COLOMBIA",
-          "Colombia"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COLOMBIA"
-      },
-      {
-        "from": [
-          "GINZO DE LIMIA",
-          "Ginzo de Limia"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GINZO DE LIMIA"
-      },
-      {
-        "from": [
-          "Logroño",
-          "LOGROÑO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "LOGROÑO"
-      },
-      {
-        "from": [
-          "CAMOENS Y VALERO",
-          "Camoens y Valero"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CAMOENS Y VALERO"
-      },
-      {
-        "from": [
-          "CAUDILLO",
-          "Caudillo"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CAUDILLO"
-      },
-      {
-        "from": [
-          "Boccherini",
-          "BOCCHERINI"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BOCCHERINI"
-      },
-      {
-        "from": [
-          "FENELON",
-          "Fenelón"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "FENELON"
-      },
-      {
-        "from": [
-          "SIERRA DE ALQUIFE",
-          "Sierra de Alquife"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SIERRA DE ALQUIFE"
-      },
-      {
-        "from": [
-          "PRINCIPE DE VERGARA",
-          "Príncipe de Vergara"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PRINCIPE DE VERGARA"
-      },
-      {
-        "from": [
-          "VILLABLANCA",
-          "Villablanca"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VILLABLANCA"
-      },
-      {
-        "from": [
-          "POETA MANUEL DEL PALACIO",
-          "Poeta Manuel del Palacio"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "POETA MANUEL DEL PALACIO"
-      },
-      {
-        "from": [
-          "López de Hoyos",
-          "LOPEZ DE HOYOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "LÓPEZ DE HOYOS"
-      },
-      {
-        "from": [
-          "Serrano",
-          "SERRANO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SERRANO"
-      },
-      {
-        "from": [
-          "EL SALVADOR",
-          "El Salvador"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "EL SALVADOR"
-      },
-      {
-        "from": [
-          "Colón",
-          "COLON"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COLÓN"
-      },
-      {
-        "from": [
-          "CASALARREINA",
-          "Casalarreina"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASALARREINA"
-      },
-      {
-        "from": [
-          "Claudio Coello",
-          "CLAUDIO COELLO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CLAUDIO COELLO"
-      },
-      {
-        "from": [
-          "San Jerónimo",
-          "SAN JERONIMO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN JERÓNIMO"
-      },
-      {
-        "from": [
-          "SANTA MARIA DE LA CABEZA",
-          "Santa María de la Cabeza"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SANTA MARIA DE LA CABEZA"
-      },
-      {
-        "from": [
-          "Princesa",
-          "PRINCESA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PRINCESA"
-      },
-      {
-        "from": [
-          "PERALES",
-          "Perales"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PERALES"
-      },
-      {
-        "from": [
-          "ALCARRIA",
-          "Alcarria"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ALCARRIA"
-      },
-      {
-        "from": [
-          "ALCALA",
-          "Alcalá"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ALCALA"
-      },
-      {
-        "from": [
-          "Velázquez",
-          "VELAZQUEZ"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VELÁZQUEZ"
-      },
-      {
-        "from": [
-          "Cortes",
-          "CORTES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CORTES"
-      },
-      {
-        "from": [
-          "CASTILLA",
-          "Castilla"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASTILLA"
-      },
-      {
-        "from": [
-          "Cruces",
-          "CRUCES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CRUCES"
-      },
-      {
-        "from": [
-          "Menéndez Pelayo",
-          "MENENDEZ PELAYO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "Menéndez Pelayo"
-      },
-      {
-        "from": [
-          "Cuña Verde",
-          "CUÑA VERDE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CUÑA VERDE"
-      },
-      {
-        "from": [
-          "BARCELO",
-          "Barceló"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BARCELO"
-      },
-      {
-        "from": [
-          "Santa Isabel",
-          "SANTA ISABEL"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SANTA ISABEL"
-      },
-      {
-        "from": [
-          "Felipe IV",
-          "FELIPE IV"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "FELIPE IV"
-      }
-    ],
-    "description": "Mass edit cells in column NOMBRE-VIA"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "COD-BARRIO",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column COD-BARRIO using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CODIGO-POSTAL",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column CODIGO-POSTAL using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "PK",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column PK using expression value.toNumber()"
-  },
-  {
-    "op": "core/row-removal",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "SUBTIPO",
-          "expression": "value",
-          "columnName": "SUBTIPO",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [],
-          "selectBlank": true,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "description": "Remove rows"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Sin datos conocidos."
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "Sin datos conocidos"
-      }
-    ],
-    "description": "Mass edit cells in column FECHA"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Sin datos conocidos"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": ""
-      }
-    ],
-    "description": "Mass edit cells in column FECHA"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Ubicada en su emplazamiento en torno a 1972"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "Cercano a 1972"
-      }
-    ],
-    "description": "Mass edit cells in column FECHA"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "FECHA",
-          "expression": "value",
-          "columnName": "FECHA",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "Circa 1983",
-                "l": "Circa 1983"
-              }
-            },
-            {
-              "v": {
-                "v": "Circa 1850",
-                "l": "Circa 1850"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "grel:value.replace(\"Circa\", \"Cercano a\")",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression grel:value.replace(\"Circa\", \"Cercano a\")"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value.trim()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression value.trim()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "text",
-          "name": "FECHA",
-          "columnName": "FECHA",
-          "query": "[A-Z,a-z]",
-          "mode": "regex",
-          "caseSensitive": false,
-          "invert": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "grel:value.substring(-4)",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression grel:value.substring(-4)"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "text",
-          "name": "FECHA",
-          "columnName": "FECHA",
-          "query": "[A-Z,a-z]",
-          "mode": "regex",
-          "caseSensitive": false,
-          "invert": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value.trim()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression value.trim()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "text",
-          "name": "FECHA",
-          "columnName": "FECHA",
-          "query": "[A-Z,a-z]",
-          "mode": "regex",
-          "caseSensitive": false,
-          "invert": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "grel:1800",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression grel:1800"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "TETUAN"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "TETUÁN"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "VICALVARO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VICÁLVARO"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "CHAMBERI"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CHAMBERÍ"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "CHAMARTIN"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CHAMARTÍN"
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "DISTRITO",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "DISTRITO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": ""
-      }
-    ],
-    "description": "Mass edit cells in column DISTRITO"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Avda"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "AVENIDA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "C"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CALLE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Cta"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CARRETERA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Ctra"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CARRETERA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Gta"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GLORIETA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "JARDINES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "JARDIN"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Paseo"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PASEO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Puente"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PUENTE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pte"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PUENTE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Cdra"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CORREDERA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Me"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "MERCADO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pº"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PASEO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Plaza"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PLAZA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pq"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PARQUE"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Cmno"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CAMINO"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Col"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COLONIA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pza"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PLAZA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Trav"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "TRAVESÍA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Rda"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RONDA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CLASE-VIAL",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Vía"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VÍA"
-      }
-    ],
-    "description": "Mass edit cells in column CLASE-VIAL"
-  },
-  {
-    "op": "core/mass-edit",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "NOMBRE-VIA",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [
-          "Pablo Neruda",
-          "PABLO NERUDA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PABLO NERUDA"
-      },
-      {
-        "from": [
-          "GUZMAN EL BUENO",
-          "Guzmán el Bueno"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GUZMAN EL BUENO"
-      },
-      {
-        "from": [
-          "Huertas",
-          "HUERTAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "HUERTAS"
-      },
-      {
-        "from": [
-          "Recoletos",
-          "RECOLETOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RECOLETOS"
-      },
-      {
-        "from": [
-          "BETANZOS",
-          "Betanzos"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BETANZOS"
-      },
-      {
-        "from": [
-          "MONFORTE DE LEMOS",
-          "Monforte de Lemos"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "MONFORTE DE LEMOS"
-      },
-      {
-        "from": [
-          "CASTELLANA",
-          "Castellana"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASTELLANA"
-      },
-      {
-        "from": [
-          "PADRE HUIDOBRO",
-          "Padre Huidobro"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PADRE HUIDOBRO"
-      },
-      {
-        "from": [
-          "Rosaleda",
-          "ROSALEDA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ROSALEDA"
-      },
-      {
-        "from": [
-          "Zarzón",
-          "ZARZON"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ZARZÓN"
-      },
-      {
-        "from": [
-          "Oriente",
-          "ORIENTE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ORIENTE"
-      },
-      {
-        "from": [
-          "Atocha",
-          "ATOCHA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ATOCHA"
-      },
-      {
-        "from": [
-          "General Ricardos",
-          "GENERAL RICARDOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GENERAL RICARDOS"
-      },
-      {
-        "from": [
-          "REINA VICTORIA",
-          "Reina Victoria"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "REINA VICTORIA"
-      },
-      {
-        "from": [
-          "VEINTICINCO DE SEPTIEMBRE",
-          "Veinticinco de Septiembre"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VEINTICINCO DE SEPTIEMBRE"
-      },
-      {
-        "from": [
-          "CHILE",
-          "Chile"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CHILE"
-      },
-      {
-        "from": [
-          "PARTERRE",
-          "Parterre"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PARTERRE"
-      },
-      {
-        "from": [
-          "PROVINCIA",
-          "Provincia"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PROVINCIA"
-      },
-      {
-        "from": [
-          "San Andrés",
-          "SAN ANDRES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN ANDRÉS"
-      },
-      {
-        "from": [
-          "Poblados",
-          "POBLADOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "POBLADOS"
-      },
-      {
-        "from": [
-          "TOLEDO",
-          "Toledo"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "TOLEDO"
-      },
-      {
-        "from": [
-          "BOADILLA DEL MONTE",
-          "Boadilla del Monte"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BOADILLA DEL MONTE"
-      },
-      {
-        "from": [
-          "ARMERIA",
-          "Armería"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ARMERÍA"
-      },
-      {
-        "from": [
-          "VICTORIA",
-          "Victoria"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VICTORIA"
-      },
-      {
-        "from": [
-          "VALGAME DIOS",
-          "Válgame Dios"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VALGAME DIOS"
-      },
-      {
-        "from": [
-          "SALESAS",
-          "Salesas"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SALESAS"
-      },
-      {
-        "from": [
-          "SAN ISIDRO",
-          "San Isidro"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN ISIDRO"
-      },
-      {
-        "from": [
-          "RUBEN DARIO",
-          "Rubén Darío"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RUBEN DARIO"
-      },
-      {
-        "from": [
-          "MANUEL ALONSO",
-          "Manuel Alonso"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "MANUEL ALONSO"
-      },
-      {
-        "from": [
-          "EJERCITO",
-          "Ejército"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "EJÉRCITO"
-      },
-      {
-        "from": [
-          "Francisco y Jacinto Alcántara",
-          "FRANCISCO Y JACINTO ALCANTARA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "FRANCISCO Y JACINTO ALCÁNTARA"
-      },
-      {
-        "from": [
-          "Ramón y Cajal",
-          "RAMON Y CAJAL"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RAMÓN Y CAJAL"
-      },
-      {
-        "from": [
-          "Arenal",
-          "ARENAL"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ARENAL"
-      },
-      {
-        "from": [
-          "Ermita del Santo",
-          "ERMITA DEL SANTO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ERMITA DEL SANTO"
-      },
-      {
-        "from": [
-          "RAIMUNDO FERNANDEZ VILLAVERDE",
-          "Raimundo Fernández Villaverde"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RAIMUNDO FERNANDEZ VILLAVERDE"
-      },
-      {
-        "from": [
-          "Entrevías",
-          "ENTREVIAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ENTREVÍAS"
-      },
-      {
-        "from": [
-          "República Argentina",
-          "REPUBLICA ARGENTINA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "REPÚBLICA ARGENTINA"
-      },
-      {
-        "from": [
-          "Alfonso XII",
-          "ALFONSO XII"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ALFONSO XII"
-      },
-      {
-        "from": [
-          "Principal de Provincias",
-          "PRINCIPAL DE PROVINCIAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PRINCIPAL DE PROVINCIAS"
-      },
-      {
-        "from": [
-          "EMBAJADORES",
-          "Embajadores"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "EMBAJADORES"
-      },
-      {
-        "from": [
-          "Castelló",
-          "CASTELLO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASTELLÓ"
-      },
-      {
-        "from": [
-          "Cardenal Herrera Oria",
-          "CARDENAL HERRERA ORIA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CARDENAL HERRERA ORIA"
-      },
-      {
-        "from": [
-          "Arturo Soria",
-          "ARTURO SORIA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ARTURO SORIA"
-      },
-      {
-        "from": [
-          "Complutense",
-          "COMPLUTENSE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COMPLUTENSE"
-      },
-      {
-        "from": [
-          "RAMIRO DE MAEZTU",
-          "Ramiro de Maeztu"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RAMIRO DE MAEZTU"
-      },
-      {
-        "from": [
-          "Doctor Tolosa Latour",
-          "DOCTOR TOLOSA LATOUR"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "DOCTOR TOLOSA LATOUR"
-      },
-      {
-        "from": [
-          "RUPERTO CHAPI",
-          "Ruperto Chapí"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "RUPERTO CHAPI"
-      },
-      {
-        "from": [
-          "Gran Vía de Villaverde",
-          "GRAN VIA DE VILLAVERDE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GRAN VÍA DE VILLAVERDE"
-      },
-      {
-        "from": [
-          "SAN ANTONIO DE LA FLORIDA",
-          "San Antonio de la Florida"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN ANTONIO DE LA FLORIDA"
-      },
-      {
-        "from": [
-          "Yeserías",
-          "YESERIAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "YESERÍAS"
-      },
-      {
-        "from": [
-          "Descalzas",
-          "DESCALZAS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "DESCALZAS"
-      },
-      {
-        "from": [
-          "SEVILLA",
-          "Sevilla"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SEVILLA"
-      },
-      {
-        "from": [
-          "COLOMBIA",
-          "Colombia"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COLOMBIA"
-      },
-      {
-        "from": [
-          "GINZO DE LIMIA",
-          "Ginzo de Limia"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "GINZO DE LIMIA"
-      },
-      {
-        "from": [
-          "Logroño",
-          "LOGROÑO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "LOGROÑO"
-      },
-      {
-        "from": [
-          "CAMOENS Y VALERO",
-          "Camoens y Valero"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CAMOENS Y VALERO"
-      },
-      {
-        "from": [
-          "CAUDILLO",
-          "Caudillo"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CAUDILLO"
-      },
-      {
-        "from": [
-          "Boccherini",
-          "BOCCHERINI"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BOCCHERINI"
-      },
-      {
-        "from": [
-          "FENELON",
-          "Fenelón"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "FENELON"
-      },
-      {
-        "from": [
-          "SIERRA DE ALQUIFE",
-          "Sierra de Alquife"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SIERRA DE ALQUIFE"
-      },
-      {
-        "from": [
-          "PRINCIPE DE VERGARA",
-          "Príncipe de Vergara"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PRINCIPE DE VERGARA"
-      },
-      {
-        "from": [
-          "VILLABLANCA",
-          "Villablanca"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VILLABLANCA"
-      },
-      {
-        "from": [
-          "POETA MANUEL DEL PALACIO",
-          "Poeta Manuel del Palacio"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "POETA MANUEL DEL PALACIO"
-      },
-      {
-        "from": [
-          "López de Hoyos",
-          "LOPEZ DE HOYOS"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "LÓPEZ DE HOYOS"
-      },
-      {
-        "from": [
-          "Serrano",
-          "SERRANO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SERRANO"
-      },
-      {
-        "from": [
-          "EL SALVADOR",
-          "El Salvador"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "EL SALVADOR"
-      },
-      {
-        "from": [
-          "Colón",
-          "COLON"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "COLÓN"
-      },
-      {
-        "from": [
-          "CASALARREINA",
-          "Casalarreina"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASALARREINA"
-      },
-      {
-        "from": [
-          "Claudio Coello",
-          "CLAUDIO COELLO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CLAUDIO COELLO"
-      },
-      {
-        "from": [
-          "San Jerónimo",
-          "SAN JERONIMO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SAN JERÓNIMO"
-      },
-      {
-        "from": [
-          "SANTA MARIA DE LA CABEZA",
-          "Santa María de la Cabeza"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SANTA MARIA DE LA CABEZA"
-      },
-      {
-        "from": [
-          "Princesa",
-          "PRINCESA"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PRINCESA"
-      },
-      {
-        "from": [
-          "PERALES",
-          "Perales"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "PERALES"
-      },
-      {
-        "from": [
-          "ALCARRIA",
-          "Alcarria"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ALCARRIA"
-      },
-      {
-        "from": [
-          "ALCALA",
-          "Alcalá"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "ALCALA"
-      },
-      {
-        "from": [
-          "Velázquez",
-          "VELAZQUEZ"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "VELÁZQUEZ"
-      },
-      {
-        "from": [
-          "Cortes",
-          "CORTES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CORTES"
-      },
-      {
-        "from": [
-          "CASTILLA",
-          "Castilla"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CASTILLA"
-      },
-      {
-        "from": [
-          "Cruces",
-          "CRUCES"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CRUCES"
-      },
-      {
-        "from": [
-          "Menéndez Pelayo",
-          "MENENDEZ PELAYO"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "Menéndez Pelayo"
-      },
-      {
-        "from": [
-          "Cuña Verde",
-          "CUÑA VERDE"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "CUÑA VERDE"
-      },
-      {
-        "from": [
-          "BARCELO",
-          "Barceló"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "BARCELO"
-      },
-      {
-        "from": [
-          "Santa Isabel",
-          "SANTA ISABEL"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "SANTA ISABEL"
-      },
-      {
-        "from": [
-          "Felipe IV",
-          "FELIPE IV"
-        ],
-        "fromBlank": false,
-        "fromError": false,
-        "to": "FELIPE IV"
-      }
-    ],
-    "description": "Mass edit cells in column NOMBRE-VIA"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "COD-BARRIO",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column COD-BARRIO using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "CODIGO-POSTAL",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column CODIGO-POSTAL using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "COORDENADA-X",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column COORDENADA-X using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "COORDENADA-Y",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column COORDENADA-Y using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "LATITUD",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column LATITUD using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "LONGITUD",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column LONGITUD using expression value.toNumber()"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "FECHA",
-    "expression": "value.toNumber()",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Text transform on cells in column FECHA using expression value.toNumber()"
-  },
-  {
     "op": "core/recon",
     "engineConfig": {
       "facets": [],
       "mode": "row-based"
     },
-    "columnName": "DISTRITO",
-    "config": {
-      "mode": "standard-service",
-      "service": "https://wikidata.reconci.link/en/api",
-      "identifierSpace": "http://www.wikidata.org/entity/",
-      "schemaSpace": "http://www.wikidata.org/prop/direct/",
-      "type": {
-        "id": "Q3032114",
-        "name": "district of Madrid"
-      },
-      "autoMatch": true,
-      "columnDetails": [],
-      "limit": 0
-    },
-    "description": "Reconcile cells in column DISTRITO to type Q3032114"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "DISTRITO",
-    "expression": "grel:\"https://wikidata.org/entity/\"+cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_DISTRITO",
-    "columnInsertIndex": 40,
-    "description": "Create column IGUAL_A_DISTRITO at index 40 based on column DISTRITO using expression grel:\"https://wikidata.org/entity/\"+cell.recon.match.id"
-  },
-  {
-    "op": "core/recon",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "BARRIO",
-    "config": {
-      "mode": "standard-service",
-      "service": "https://wikidata.reconci.link/en/api",
-      "identifierSpace": "http://www.wikidata.org/entity/",
-      "schemaSpace": "http://www.wikidata.org/prop/direct/",
-      "type": {
-        "id": "Q10267336",
-        "name": "neighborhood of Madrid"
-      },
-      "autoMatch": true,
-      "columnDetails": [],
-      "limit": 0
-    },
-    "description": "Reconcile cells in column BARRIO to type Q10267336"
-  },
-  {
-    "op": "core/recon",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "LOCALIDAD",
-    "config": {
-      "mode": "standard-service",
-      "service": "https://wikidata.reconci.link/en/api",
-      "identifierSpace": "http://www.wikidata.org/entity/",
-      "schemaSpace": "http://www.wikidata.org/prop/direct/",
-      "type": {
-        "id": "Q2074737",
-        "name": "municipality of Spain"
-      },
-      "autoMatch": true,
-      "columnDetails": [],
-      "limit": 0
-    },
-    "description": "Reconcile cells in column LOCALIDAD to type Q2074737"
-  },
-  {
-    "op": "core/recon",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "AUTOR 1",
+    "columnName": "AUTOR 4",
     "config": {
       "mode": "standard-service",
       "service": "https://wikidata.reconci.link/en/api",
@@ -3181,129 +19,127 @@
       "columnDetails": [],
       "limit": 0
     },
-    "description": "Reconcile cells in column AUTOR 1 to type Q5"
-  },
-  {
-    "op": "core/recon",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "AUTOR 2",
-    "config": {
-      "mode": "standard-service",
-      "service": "https://wikidata.reconci.link/en/api",
-      "identifierSpace": "http://www.wikidata.org/entity/",
-      "schemaSpace": "http://www.wikidata.org/prop/direct/",
-      "type": {
-        "id": "Q5",
-        "name": "human"
-      },
-      "autoMatch": true,
-      "columnDetails": [],
-      "limit": 0
-    },
-    "description": "Reconcile cells in column AUTOR 2 to type Q5"
-  },
-  {
-    "op": "core/recon",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "columnName": "AUTOR 3",
-    "config": {
-      "mode": "standard-service",
-      "service": "https://wikidata.reconci.link/en/api",
-      "identifierSpace": "http://www.wikidata.org/entity/",
-      "schemaSpace": "http://www.wikidata.org/prop/direct/",
-      "type": {
-        "id": "Q5",
-        "name": "human"
-      },
-      "autoMatch": true,
-      "columnDetails": [],
-      "limit": 0
-    },
-    "description": "Reconcile cells in column AUTOR 3 to type Q5"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "BARRIO",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_BARRIO",
-    "columnInsertIndex": 38,
-    "description": "Create column IGUAL_A_BARRIO at index 38 based on column BARRIO using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 1",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR1",
-    "columnInsertIndex": 6,
-    "description": "Create column IGUAL_A_AUTOR1 at index 6 based on column AUTOR 1 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 2",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR2",
-    "columnInsertIndex": 8,
-    "description": "Create column IGUAL_A_AUTOR2 at index 8 based on column AUTOR 2 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 3",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR3",
-    "columnInsertIndex": 10,
-    "description": "Create column IGUAL_A_AUTOR3 at index 10 based on column AUTOR 3 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
+    "description": "Reconcile cells in column AUTOR 4 to type Q5"
   },
   {
     "op": "core/recon-judge-similar-cells",
     "engineConfig": {
-      "facets": [],
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 4: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 4",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
       "mode": "row-based"
     },
-    "columnName": "LOCALIDAD",
-    "similarValue": "MADRID",
+    "columnName": "AUTOR 4",
+    "similarValue": "GUTIÉRREZ, Fernando",
     "judgment": "matched",
     "match": {
-      "id": "Q2807",
-      "name": "Madrid",
+      "id": "Q110665309",
+      "name": "Fernando Gutiérrez",
       "types": [
-        "Q2074737",
-        "Q515",
-        "Q1549591",
-        "Q1637706",
-        "Q5119",
-        "Q486972",
-        "Q51929311"
+        "Q5"
       ],
       "score": 100
     },
     "shareNewTopics": false,
-    "description": "Match item Madrid (Q2807) for cells containing \"MADRID\" in column LOCALIDAD"
+    "description": "Match item Fernando Gutiérrez (Q110665309) for cells containing \"GUTIÉRREZ, Fernando\" in column AUTOR 4"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 4: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 4",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 4",
+    "similarValue": "RODRÍGUEZ, Andrés",
+    "judgment": "matched",
+    "match": {
+      "id": "Q110414997",
+      "name": "Andrés Rodríguez",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Andrés Rodríguez (Q110414997) for cells containing \"RODRÍGUEZ, Andrés\" in column AUTOR 4"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 4: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 4",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 4",
+    "similarValue": "FERNÁNDEZ, Félix",
+    "judgment": "matched",
+    "match": {
+      "id": "Q110665647",
+      "name": "Félix Fernández",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Félix Fernández (Q110665647) for cells containing \"FERNÁNDEZ, Félix\" in column AUTOR 4"
   },
   {
     "op": "core/column-addition",
@@ -3311,11 +147,2871 @@
       "facets": [],
       "mode": "row-based"
     },
-    "baseColumnName": "LOCALIDAD",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
+    "baseColumnName": "AUTOR 4",
+    "expression": "cell.recon.match.id",
     "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_LOCALIDAD",
-    "columnInsertIndex": 37,
-    "description": "Create column IGUAL_A_LOCALIDAD at index 37 based on column LOCALIDAD using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
+    "newColumnName": "IGUAL_A_AUTOR4",
+    "columnInsertIndex": 12,
+    "description": "Create column IGUAL_A_AUTOR4 at index 12 based on column AUTOR 4 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR4",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR4 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 5",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 5 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 5",
+    "similarValue": "LOZANO, Julián",
+    "judgment": "matched",
+    "match": {
+      "id": "Q99193900",
+      "name": "Julián Lozano Serrano",
+      "types": [
+        "Q5"
+      ],
+      "score": 76
+    },
+    "shareNewTopics": false,
+    "description": "Match item Julián Lozano Serrano (Q99193900) for cells containing \"LOZANO, Julián\" in column AUTOR 5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 5",
+    "similarValue": "JIMÉNEZ, Jesús",
+    "judgment": "matched",
+    "match": {
+      "id": "Q110670705",
+      "name": "Jesús Jiménez",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Jesús Jiménez (Q110670705) for cells containing \"JIMÉNEZ, Jesús\" in column AUTOR 5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 5",
+    "similarValue": "SOLÁ, Antonio",
+    "judgment": "matched",
+    "match": {
+      "id": "Q1530645",
+      "name": "Antonio Solá",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Antonio Solá (Q1530645) for cells containing \"SOLÁ, Antonio\" in column AUTOR 5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 5",
+    "similarValue": "PÉREZ MATEO, Francisco",
+    "judgment": "matched",
+    "match": {
+      "id": "Q6436734",
+      "name": "Francisco Pérez Mateo",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Francisco Pérez Mateo (Q6436734) for cells containing \"PÉREZ MATEO, Francisco\" in column AUTOR 5"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 5",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR5",
+    "columnInsertIndex": 14,
+    "description": "Create column IGUAL_A_AUTOR5 at index 14 based on column AUTOR 5 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR5",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR5 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 5: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 5",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 6",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 6 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 6: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 6",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 6",
+    "similarValue": "ORTELLS LÓPEZ, José Pascual",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5944412",
+      "name": "Josep Pasqual Ortells López",
+      "types": [
+        "Q5"
+      ],
+      "score": 94
+    },
+    "shareNewTopics": false,
+    "description": "Match item Josep Pasqual Ortells López (Q5944412) for cells containing \"ORTELLS LÓPEZ, José Pascual\" in column AUTOR 6"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 6: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 6",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 6",
+    "similarValue": "RODRÍGUEZ, José",
+    "judgment": "matched",
+    "match": {
+      "id": "Q16734391",
+      "name": "José Rodríguez Pérez",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item José Rodríguez Pérez (Q16734391) for cells containing \"RODRÍGUEZ, José\" in column AUTOR 6"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 6: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 6",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 6",
+    "similarValue": "TOMÁS, José",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5945783",
+      "name": "José Tomás",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item José Tomás (Q5945783) for cells containing \"TOMÁS, José\" in column AUTOR 6"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 6: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 6",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 6",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR6",
+    "columnInsertIndex": 16,
+    "description": "Create column IGUAL_A_AUTOR6 at index 16 based on column AUTOR 6 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 6: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 6",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR6",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR6 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 6: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 6",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 7",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 7 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 7: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 7",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 7",
+    "similarValue": "SOBEJANO GARCÍA, Enrique",
+    "judgment": "matched",
+    "match": {
+      "id": "Q15808152",
+      "name": "Enrique Sobejano",
+      "types": [
+        "Q5"
+      ],
+      "score": 82
+    },
+    "shareNewTopics": false,
+    "description": "Match item Enrique Sobejano (Q15808152) for cells containing \"SOBEJANO GARCÍA, Enrique\" in column AUTOR 7"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 7: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 7",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 7",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A",
+    "columnInsertIndex": 18,
+    "description": "Create column IGUAL_A at index 18 based on column AUTOR 7 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "IGUAL_A",
+    "newColumnName": "IGUAL_A_AUTOR7",
+    "description": "Rename column IGUAL_A to IGUAL_A_AUTOR7"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 7: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 7",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR7",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR7 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 7: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 7",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 8",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 8 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 8: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 8",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 8",
+    "similarValue": "XIMÉNEZ, Miguel",
+    "judgment": "matched",
+    "match": {
+      "id": "Q922735",
+      "name": "Miguel Ximénez",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Miguel Ximénez (Q922735) for cells containing \"XIMÉNEZ, Miguel\" in column AUTOR 8"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 8: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 8",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 8",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR8",
+    "columnInsertIndex": 20,
+    "description": "Create column IGUAL_A_AUTOR8 at index 20 based on column AUTOR 8 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 8: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 8",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR8",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR8 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 8: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 8",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 9",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 9 to type Q5"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 9: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 9",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 9",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR9",
+    "columnInsertIndex": 22,
+    "description": "Create column IGUAL_A_AUTOR9 at index 22 based on column AUTOR 9 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 9: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 9",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR9",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR9 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 9: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 9",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 10",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 10 to type Q5"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 10: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 10",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 10",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR10",
+    "columnInsertIndex": 24,
+    "description": "Create column IGUAL_A_AUTOR10 at index 24 based on column AUTOR 10 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 10: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 10",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR10",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR10 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 10: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 10",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 11",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 11 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 11: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 11",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 11",
+    "similarValue": "TOMÁS, José",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5945783",
+      "name": "José Tomás",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item José Tomás (Q5945783) for cells containing \"TOMÁS, José\" in column AUTOR 11"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 11: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 11",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 11",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR11",
+    "columnInsertIndex": 26,
+    "description": "Create column IGUAL_A_AUTOR11 at index 26 based on column AUTOR 11 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 11: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 11",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR11",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR11 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 11: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 11",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 12",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 12 to type Q5"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 12",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR12",
+    "columnInsertIndex": 28,
+    "description": "Create column IGUAL_A_AUTOR12 at index 28 based on column AUTOR 12 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR12",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR12 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 13",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 13 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 13",
+    "similarValue": "COLL, Antonio",
+    "judgment": "matched",
+    "match": {
+      "id": "Q13426381",
+      "name": "Antoni Coll i Pi",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Antoni Coll i Pi (Q13426381) for cells containing \"COLL, Antonio\" in column AUTOR 13"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 13",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR13",
+    "columnInsertIndex": 30,
+    "description": "Create column IGUAL_A_AUTOR13 at index 30 based on column AUTOR 13 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR13",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR13 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 12: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 12",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 14",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 14 to type Q5"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 14: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 14",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 14",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR14",
+    "columnInsertIndex": 32,
+    "description": "Create column IGUAL_A_AUTOR14 at index 32 based on column AUTOR 14 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 14: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 14",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR14",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR14 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 14: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 14",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 15",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 15 to type Q5"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 14: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 14",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 15",
+    "similarValue": "ESCUDERO, Francisco",
+    "judgment": "matched",
+    "match": {
+      "id": "Q8962171",
+      "name": "Francesc Escudero i Ribot",
+      "types": [
+        "Q5"
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Francesc Escudero i Ribot (Q8962171) for cells containing \"ESCUDERO, Francisco\" in column AUTOR 15"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 15: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 15",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 15",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR15",
+    "columnInsertIndex": 34,
+    "description": "Create column IGUAL_A_AUTOR15 at index 34 based on column AUTOR 15 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 15: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 15",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR15",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR15 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 15: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 15",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 16",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 16 to type Q5"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 15: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 15",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 16",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR16",
+    "columnInsertIndex": 36,
+    "description": "Create column IGUAL_A_AUTOR16 at index 36 based on column AUTOR 16 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 15: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "AUTOR 15",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR16",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR16 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column NOMBRE to type null"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 17",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 17 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 18",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 18 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 19",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 19 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 20",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 20 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 22",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 22 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 23",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 23 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 24",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 24 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 25",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 25 to type Q5"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 21",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column AUTOR 21 to type Q5"
+  },
+  {
+    "op": "core/recon-match-best-candidates",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "NOMBRE: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "NOMBRE",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "none",
+                "l": "none"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "description": "Match each cell to its best recon candidate in column NOMBRE"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "NOMBRE: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "NOMBRE",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "NOMBRE",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_MONUMENTO",
+    "columnInsertIndex": 2,
+    "description": "Create column IGUAL_A_MONUMENTO at index 2 based on column NOMBRE using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "NOMBRE: judgment",
+          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
+          "columnName": "NOMBRE",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "matched",
+                "l": "matched"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_MONUMENTO",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_MONUMENTO using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 17",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR17",
+    "columnInsertIndex": 39,
+    "description": "Create column IGUAL_A_AUTOR17 at index 39 based on column AUTOR 17 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR17",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR17 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 18",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR18",
+    "columnInsertIndex": 41,
+    "description": "Create column IGUAL_A_AUTOR18 at index 41 based on column AUTOR 18 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR18",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR18 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 19",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR19",
+    "columnInsertIndex": 43,
+    "description": "Create column IGUAL_A_AUTOR19 at index 43 based on column AUTOR 19 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR19",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR19 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 20",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR20",
+    "columnInsertIndex": 45,
+    "description": "Create column IGUAL_A_AUTOR20 at index 45 based on column AUTOR 20 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR20",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR20 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 21",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR21",
+    "columnInsertIndex": 47,
+    "description": "Create column IGUAL_A_AUTOR21 at index 47 based on column AUTOR 21 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR21",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR21 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 22",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR22",
+    "columnInsertIndex": 49,
+    "description": "Create column IGUAL_A_AUTOR22 at index 49 based on column AUTOR 22 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR22",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR22 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 23",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR23",
+    "columnInsertIndex": 51,
+    "description": "Create column IGUAL_A_AUTOR23 at index 51 based on column AUTOR 23 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR23",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR23 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 24",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR24",
+    "columnInsertIndex": 53,
+    "description": "Create column IGUAL_A_AUTOR24 at index 53 based on column AUTOR 24 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR24",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR24 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 25",
+    "expression": "cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "IGUAL_A_AUTOR25",
+    "columnInsertIndex": 55,
+    "description": "Create column IGUAL_A_AUTOR25 at index 55 based on column AUTOR 25 using expression cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "AUTOR 17",
+          "expression": "value",
+          "columnName": "AUTOR 17",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "FUXÁ Y LEAL, Manuel",
+                "l": "FUXÁ Y LEAL, Manuel"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "IGUAL_A_AUTOR25",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column IGUAL_A_AUTOR25 using expression grel:\"https://www.wikidata.org/entity/\"+value"
   }
 ]

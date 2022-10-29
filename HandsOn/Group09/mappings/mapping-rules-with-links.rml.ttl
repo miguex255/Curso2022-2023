@@ -13,37 +13,55 @@
 map:map_TriplesMapAllData_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "TriplesMapAllData" ;
-	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015, map:pom_016, map:pom_017, map:pom_018, map:pom_019, map:pom_020, map:pom_021, map:pom_022, map:pom_023, map:pom_024, map:pom_025, map:pom_026, map:pom_027, map:pom_028, map:pom_029, map:pom_030, map:pom_031, map:pom_032, map:pom_033, map:pom_034 ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015, map:pom_016, map:pom_017, map:pom_018, map:pom_019, map:pom_020, map:pom_021, map:pom_022, map:pom_023, map:pom_024, map:pom_025, map:pom_026, map:pom_027, map:pom_028, map:pom_029, map:pom_030, map:pom_031, map:pom_032 ;
 	rr:subjectMap map:s_000 .
+
+map:map_TriplesMapAutor2_000 rml:logicalSource map:source_007 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "TriplesMapAutor2" ;
+	rr:predicateObjectMap map:pom_053, map:pom_054, map:pom_055 ;
+	rr:subjectMap map:s_007 .
+
+map:map_TriplesMapAutor3_000 rml:logicalSource map:source_008 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "TriplesMapAutor3" ;
+	rr:predicateObjectMap map:pom_056, map:pom_057, map:pom_058 ;
+	rr:subjectMap map:s_008 .
+
+map:map_TriplesMapAutor_000 rml:logicalSource map:source_006 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "TriplesMapAutor" ;
+	rr:predicateObjectMap map:pom_050, map:pom_051, map:pom_052 ;
+	rr:subjectMap map:s_006 .
 
 map:map_TriplesMapBarrio_000 rml:logicalSource map:source_003 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "TriplesMapBarrio" ;
-	rr:predicateObjectMap map:pom_040, map:pom_041, map:pom_042, map:pom_043 ;
+	rr:predicateObjectMap map:pom_038, map:pom_039, map:pom_040, map:pom_041 ;
 	rr:subjectMap map:s_003 .
 
 map:map_TriplesMapDistrito_000 rml:logicalSource map:source_004 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "TriplesMapDistrito" ;
-	rr:predicateObjectMap map:pom_044, map:pom_045, map:pom_046, map:pom_047, map:pom_048 ;
+	rr:predicateObjectMap map:pom_042, map:pom_043, map:pom_044, map:pom_045, map:pom_046 ;
 	rr:subjectMap map:s_004 .
 
 map:map_TriplesMapLocalidad_000 rml:logicalSource map:source_005 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "TriplesMapLocalidad" ;
-	rr:predicateObjectMap map:pom_049, map:pom_050, map:pom_051 ;
+	rr:predicateObjectMap map:pom_047, map:pom_048, map:pom_049 ;
 	rr:subjectMap map:s_005 .
 
 map:map_TriplesMapTipoVia_000 rml:logicalSource map:source_002 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "TriplesMapTipoVia" ;
-	rr:predicateObjectMap map:pom_038, map:pom_039 ;
+	rr:predicateObjectMap map:pom_036, map:pom_037 ;
 	rr:subjectMap map:s_002 .
 
 map:map_TriplesMapVia_000 rml:logicalSource map:source_001 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "TriplesMapVia" ;
-	rr:predicateObjectMap map:pom_035, map:pom_036, map:pom_037 ;
+	rr:predicateObjectMap map:pom_033, map:pom_034, map:pom_035 ;
 	rr:subjectMap map:s_001 .
 
 map:om_000 rdf:type rr:ObjectMap ;
@@ -60,199 +78,231 @@ map:om_002 rml:reference "DESCRIPCION" ;
 
 map:om_003 rml:reference "FECHA" ;
 	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:integer ;
 	rr:termType rr:Literal .
 
-map:om_004 rml:reference "AUTOR 1" ;
-	rdf:type rr:ObjectMap ;
+map:om_004 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 1}" ;
 	rr:termType rr:Literal .
 
-map:om_005 rml:reference "IGUAL_A_AUTOR1" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
-map:om_006 rml:reference "AUTOR 2" ;
-	rdf:type rr:ObjectMap ;
+map:om_005 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 2}" ;
 	rr:termType rr:Literal .
 
-map:om_007 rml:reference "IGUAL_A_AUTOR2" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
-map:om_008 rml:reference "AUTOR 3" ;
-	rdf:type rr:ObjectMap ;
+map:om_006 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 3}" ;
 	rr:termType rr:Literal .
 
-map:om_009 rml:reference "IGUAL_A_AUTOR3" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
-map:om_010 rml:reference "AUTOR 4" ;
-	rdf:type rr:ObjectMap ;
+map:om_007 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 4}" ;
 	rr:termType rr:Literal .
 
-map:om_011 rml:reference "AUTOR 5" ;
-	rdf:type rr:ObjectMap ;
+map:om_008 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 5}" ;
 	rr:termType rr:Literal .
 
-map:om_012 rml:reference "AUTOR 6" ;
-	rdf:type rr:ObjectMap ;
+map:om_009 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 6}" ;
 	rr:termType rr:Literal .
 
-map:om_013 rml:reference "AUTOR 7" ;
-	rdf:type rr:ObjectMap ;
+map:om_010 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 7}" ;
 	rr:termType rr:Literal .
 
-map:om_014 rml:reference "AUTOR 8" ;
-	rdf:type rr:ObjectMap ;
+map:om_011 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 8}" ;
 	rr:termType rr:Literal .
 
-map:om_015 rml:reference "AUTOR 9" ;
-	rdf:type rr:ObjectMap ;
+map:om_012 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 9}" ;
 	rr:termType rr:Literal .
 
-map:om_016 rml:reference "AUTOR 10" ;
-	rdf:type rr:ObjectMap ;
+map:om_013 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 10}" ;
 	rr:termType rr:Literal .
 
-map:om_017 rml:reference "AUTOR 11" ;
-	rdf:type rr:ObjectMap ;
+map:om_014 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 11}" ;
 	rr:termType rr:Literal .
 
-map:om_018 rml:reference "AUTOR 12" ;
-	rdf:type rr:ObjectMap ;
+map:om_015 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 12}" ;
 	rr:termType rr:Literal .
 
-map:om_019 rml:reference "AUTOR 13" ;
-	rdf:type rr:ObjectMap ;
+map:om_016 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 13}" ;
 	rr:termType rr:Literal .
 
-map:om_020 rml:reference "AUTOR 14" ;
-	rdf:type rr:ObjectMap ;
+map:om_017 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 14}" ;
 	rr:termType rr:Literal .
 
-map:om_021 rml:reference "AUTOR 15" ;
-	rdf:type rr:ObjectMap ;
+map:om_018 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 15}" ;
 	rr:termType rr:Literal .
 
-map:om_022 rml:reference "AUTOR 16" ;
-	rdf:type rr:ObjectMap ;
+map:om_019 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 16}" ;
 	rr:termType rr:Literal .
 
-map:om_023 rml:reference "AUTOR 17" ;
-	rdf:type rr:ObjectMap ;
+map:om_020 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 17}" ;
 	rr:termType rr:Literal .
 
-map:om_024 rml:reference "AUTOR 18" ;
-	rdf:type rr:ObjectMap ;
+map:om_021 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 18}" ;
 	rr:termType rr:Literal .
 
-map:om_025 rml:reference "AUTOR 19" ;
-	rdf:type rr:ObjectMap ;
+map:om_022 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 19}" ;
 	rr:termType rr:Literal .
 
-map:om_026 rml:reference "AUTOR 20" ;
-	rdf:type rr:ObjectMap ;
+map:om_023 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 20}" ;
 	rr:termType rr:Literal .
 
-map:om_027 rml:reference "AUTOR 21" ;
-	rdf:type rr:ObjectMap ;
+map:om_024 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 21}" ;
 	rr:termType rr:Literal .
 
-map:om_028 rml:reference "AUTOR 22" ;
-	rdf:type rr:ObjectMap ;
+map:om_025 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 22}" ;
 	rr:termType rr:Literal .
 
-map:om_029 rml:reference "AUTOR 23" ;
-	rdf:type rr:ObjectMap ;
+map:om_026 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 23}" ;
 	rr:termType rr:Literal .
 
-map:om_030 rml:reference "AUTOR 24" ;
-	rdf:type rr:ObjectMap ;
+map:om_027 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 24}" ;
 	rr:termType rr:Literal .
 
-map:om_031 rml:reference "AUTOR 25" ;
-	rdf:type rr:ObjectMap ;
+map:om_028 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 25}" ;
 	rr:termType rr:Literal .
 
-map:om_032 rdf:type rr:ObjectMap ;
+map:om_029 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Vía/{NOMBRE-VIA}" ;
 	rr:termType rr:Literal .
 
-map:om_033 rml:reference "LATITUD" ;
+map:om_030 rml:reference "LATITUD" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:float ;
+	rr:termType rr:Literal .
+
+map:om_031 rml:reference "LONGITUD" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:float ;
+	rr:termType rr:Literal .
+
+map:om_032 rml:reference "IGUAL_A_MONUMENTO" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_034 rml:reference "LONGITUD" ;
+map:om_033 rdf:type rr:ObjectMap ;
+	rr:template "http://madridturistsites.es/TipoVía/{CLASE-VIAL}" ;
+	rr:termType rr:IRI .
+
+map:om_034 rml:reference "NOMBRE-VIA" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
 map:om_035 rdf:type rr:ObjectMap ;
-	rr:template "http://madridturistsites.es/TipoVía/{CLASE-VIAL}" ;
-	rr:termType rr:IRI .
-
-map:om_036 rml:reference "NOMBRE-VIA" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
-
-map:om_037 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Barrio/{COD-BARRIO}" ;
 	rr:termType rr:Literal .
 
-map:om_038 rdf:type rr:ObjectMap ;
+map:om_036 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/TipoVía" ;
 	rr:termType rr:IRI .
 
-map:om_039 rml:reference "CLASE-VIAL" ;
+map:om_037 rml:reference "CLASE-VIAL" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_038 rdf:type rr:ObjectMap ;
+	rr:constant "http://madridturistsites.es/Barrio" ;
+	rr:termType rr:IRI .
+
+map:om_039 rml:reference "BARRIO" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
 map:om_040 rdf:type rr:ObjectMap ;
-	rr:constant "http://madridturistsites.es/Barrio" ;
-	rr:termType rr:IRI .
+	rr:template "http://madridturistsites.es/Distrito/{COD-DISTRITO}" ;
+	rr:termType rr:Literal .
 
-map:om_041 rml:reference "BARRIO" ;
+map:om_041 rml:reference "IGUAL_A_BARRIO" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
 map:om_042 rdf:type rr:ObjectMap ;
-	rr:template "http://madridturistsites.es/Distrito/{DISTRITO}" ;
-	rr:termType rr:Literal .
-
-map:om_043 rml:reference "IGUAL_A_BARRIO" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
-map:om_044 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Distrito" ;
 	rr:termType rr:IRI .
 
-map:om_045 rml:reference "DISTRITO" ;
+map:om_043 rml:reference "DISTRITO" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_046 rdf:type rr:ObjectMap ;
+map:om_044 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Localidad/{LOCALIDAD}" ;
 	rr:termType rr:Literal .
 
-map:om_047 rml:reference "CODIGO-POSTAL" ;
+map:om_045 rml:reference "CODIGO-POSTAL" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:integer ;
+	rr:termType rr:Literal .
+
+map:om_046 rml:reference "IGUAL_A_DISTRITO" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_048 rml:reference "IGUAL_A_DISTRITO" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
-map:om_049 rdf:type rr:ObjectMap ;
+map:om_047 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Localidad" ;
 	rr:termType rr:IRI .
 
-map:om_050 rml:reference "LOCALIDAD" ;
+map:om_048 rml:reference "LOCALIDAD" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_051 rml:reference "IGUAL_A_LOCALIDAD" ;
+map:om_049 rml:reference "IGUAL_A_LOCALIDAD" ;
 	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_050 rdf:type rr:ObjectMap ;
+	rr:constant "http://madridturistsites.es/Autor" ;
 	rr:termType rr:IRI .
+
+map:om_051 rml:reference "AUTOR 1" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_052 rml:reference "IGUAL_A_AUTOR1" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_053 rdf:type rr:ObjectMap ;
+	rr:constant "http://madridturistsites.es/Autor" ;
+	rr:termType rr:IRI .
+
+map:om_054 rml:reference "AUTOR 2" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_055 rml:reference "IGUAL_A_AUTOR2" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_056 rdf:type rr:ObjectMap ;
+	rr:constant "http://madridturistsites.es/Autor" ;
+	rr:termType rr:IRI .
+
+map:om_057 rml:reference "AUTOR 3" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_058 rml:reference "IGUAL_A_AUTOR3" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
 
 map:pm_000 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
@@ -270,19 +320,19 @@ map:pm_004 rdf:type rr:PredicateMap ;
 	rr:constant ns:autor .
 
 map:pm_005 rdf:type rr:PredicateMap ;
-	rr:constant owl:sameAs .
+	rr:constant ns:autor .
 
 map:pm_006 rdf:type rr:PredicateMap ;
 	rr:constant ns:autor .
 
 map:pm_007 rdf:type rr:PredicateMap ;
-	rr:constant owl:sameAs .
+	rr:constant ns:autor .
 
 map:pm_008 rdf:type rr:PredicateMap ;
 	rr:constant ns:autor .
 
 map:pm_009 rdf:type rr:PredicateMap ;
-	rr:constant owl:sameAs .
+	rr:constant ns:autor .
 
 map:pm_010 rdf:type rr:PredicateMap ;
 	rr:constant ns:autor .
@@ -342,31 +392,31 @@ map:pm_028 rdf:type rr:PredicateMap ;
 	rr:constant ns:autor .
 
 map:pm_029 rdf:type rr:PredicateMap ;
-	rr:constant ns:autor .
-
-map:pm_030 rdf:type rr:PredicateMap ;
-	rr:constant ns:autor .
-
-map:pm_031 rdf:type rr:PredicateMap ;
-	rr:constant ns:autor .
-
-map:pm_032 rdf:type rr:PredicateMap ;
 	rr:constant ns:seEncuentraEn .
 
-map:pm_033 rdf:type rr:PredicateMap ;
+map:pm_030 rdf:type rr:PredicateMap ;
 	rr:constant ns:tieneLatitud .
 
-map:pm_034 rdf:type rr:PredicateMap ;
+map:pm_031 rdf:type rr:PredicateMap ;
 	rr:constant ns:tieneLongitud .
 
-map:pm_035 rdf:type rr:PredicateMap ;
+map:pm_032 rdf:type rr:PredicateMap ;
+	rr:constant owl:sameAs .
+
+map:pm_033 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
-map:pm_036 rdf:type rr:PredicateMap ;
+map:pm_034 rdf:type rr:PredicateMap ;
 	rr:constant ns:nombre .
 
-map:pm_037 rdf:type rr:PredicateMap ;
+map:pm_035 rdf:type rr:PredicateMap ;
 	rr:constant ns:perteneceA .
+
+map:pm_036 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_037 rdf:type rr:PredicateMap ;
+	rr:constant ns:nombre .
 
 map:pm_038 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
@@ -375,39 +425,60 @@ map:pm_039 rdf:type rr:PredicateMap ;
 	rr:constant ns:nombre .
 
 map:pm_040 rdf:type rr:PredicateMap ;
-	rr:constant rdf:type .
+	rr:constant ns:perteneceA .
 
 map:pm_041 rdf:type rr:PredicateMap ;
-	rr:constant ns:nombre .
+	rr:constant owl:sameAs .
 
 map:pm_042 rdf:type rr:PredicateMap ;
-	rr:constant ns:perteneceA .
+	rr:constant rdf:type .
 
 map:pm_043 rdf:type rr:PredicateMap ;
-	rr:constant owl:sameAs .
+	rr:constant ns:nombre .
 
 map:pm_044 rdf:type rr:PredicateMap ;
-	rr:constant rdf:type .
-
-map:pm_045 rdf:type rr:PredicateMap ;
-	rr:constant ns:nombre .
-
-map:pm_046 rdf:type rr:PredicateMap ;
 	rr:constant ns:perteneceA .
 
-map:pm_047 rdf:type rr:PredicateMap ;
+map:pm_045 rdf:type rr:PredicateMap ;
 	rr:constant ns:codigoPostal .
 
-map:pm_048 rdf:type rr:PredicateMap ;
+map:pm_046 rdf:type rr:PredicateMap ;
 	rr:constant owl:sameAs .
 
-map:pm_049 rdf:type rr:PredicateMap ;
+map:pm_047 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
-map:pm_050 rdf:type rr:PredicateMap ;
+map:pm_048 rdf:type rr:PredicateMap ;
 	rr:constant ns:nombre .
 
+map:pm_049 rdf:type rr:PredicateMap ;
+	rr:constant owl:sameAs .
+
+map:pm_050 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
 map:pm_051 rdf:type rr:PredicateMap ;
+	rr:constant ns:nombre .
+
+map:pm_052 rdf:type rr:PredicateMap ;
+	rr:constant owl:sameAs .
+
+map:pm_053 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_054 rdf:type rr:PredicateMap ;
+	rr:constant ns:nombre .
+
+map:pm_055 rdf:type rr:PredicateMap ;
+	rr:constant owl:sameAs .
+
+map:pm_056 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_057 rdf:type rr:PredicateMap ;
+	rr:constant ns:nombre .
+
+map:pm_058 rdf:type rr:PredicateMap ;
 	rr:constant owl:sameAs .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
@@ -618,7 +689,35 @@ map:pom_051 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_051 ;
 	rr:predicateMap map:pm_051 .
 
-map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_TriplesMapAllData_000, map:map_TriplesMapBarrio_000, map:map_TriplesMapDistrito_000, map:map_TriplesMapLocalidad_000, map:map_TriplesMapTipoVia_000, map:map_TriplesMapVia_000 ;
+map:pom_052 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_052 ;
+	rr:predicateMap map:pm_052 .
+
+map:pom_053 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_053 ;
+	rr:predicateMap map:pm_053 .
+
+map:pom_054 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_054 ;
+	rr:predicateMap map:pm_054 .
+
+map:pom_055 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_055 ;
+	rr:predicateMap map:pm_055 .
+
+map:pom_056 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_056 ;
+	rr:predicateMap map:pm_056 .
+
+map:pom_057 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_057 ;
+	rr:predicateMap map:pm_057 .
+
+map:pom_058 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_058 ;
+	rr:predicateMap map:pm_058 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_TriplesMapAllData_000, map:map_TriplesMapAutor2_000, map:map_TriplesMapAutor3_000, map:map_TriplesMapAutor_000, map:map_TriplesMapBarrio_000, map:map_TriplesMapDistrito_000, map:map_TriplesMapLocalidad_000, map:map_TriplesMapTipoVia_000, map:map_TriplesMapVia_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
 
 map:s_000 rdf:type rr:SubjectMap ;
@@ -638,6 +737,15 @@ map:s_004 rdf:type rr:SubjectMap ;
 
 map:s_005 rdf:type rr:SubjectMap ;
 	rr:template "http://madridturistsites.es/Localidad/{LOCALIDAD}" .
+
+map:s_006 rdf:type rr:SubjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 1}" .
+
+map:s_007 rdf:type rr:SubjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 2}" .
+
+map:s_008 rdf:type rr:SubjectMap ;
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 3}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
 	rml:source "Monumento-ciudad-madrid-updated-with-links.csv" ;
@@ -660,6 +768,18 @@ map:source_004 rml:referenceFormulation ql:CSV ;
 	rdf:type rml:LogicalSource .
 
 map:source_005 rml:referenceFormulation ql:CSV ;
+	rml:source "Monumento-ciudad-madrid-updated-with-links.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_006 rml:referenceFormulation ql:CSV ;
+	rml:source "Monumento-ciudad-madrid-updated-with-links.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_007 rml:referenceFormulation ql:CSV ;
+	rml:source "Monumento-ciudad-madrid-updated-with-links.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_008 rml:referenceFormulation ql:CSV ;
 	rml:source "Monumento-ciudad-madrid-updated-with-links.csv" ;
 	rdf:type rml:LogicalSource .
 
