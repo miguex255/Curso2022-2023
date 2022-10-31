@@ -183,7 +183,7 @@ map:om_028 rdf:type rr:ObjectMap ;
 
 map:om_029 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Vía/{NOMBRE-VIA}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_030 rml:reference "LATITUD" ;
 	rdf:type rr:ObjectMap ;
@@ -197,7 +197,7 @@ map:om_031 rml:reference "LONGITUD" ;
 
 map:om_032 rml:reference "IGUAL_A_MONUMENTO" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_033 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/TipoVía/{CLASE-VIAL}" ;
@@ -209,7 +209,7 @@ map:om_034 rml:reference "NOMBRE-VIA" ;
 
 map:om_035 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Barrio/{COD-BARRIO}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_036 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/TipoVía" ;
@@ -229,11 +229,11 @@ map:om_039 rml:reference "BARRIO" ;
 
 map:om_040 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Distrito/{COD-DISTRITO}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_041 rml:reference "IGUAL_A_BARRIO" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_042 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Distrito" ;
@@ -245,7 +245,7 @@ map:om_043 rml:reference "DISTRITO" ;
 
 map:om_044 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/Localidad/{LOCALIDAD}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_045 rml:reference "CODIGO-POSTAL" ;
 	rdf:type rr:ObjectMap ;
@@ -254,7 +254,7 @@ map:om_045 rml:reference "CODIGO-POSTAL" ;
 
 map:om_046 rml:reference "IGUAL_A_DISTRITO" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_047 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Localidad" ;
@@ -266,7 +266,7 @@ map:om_048 rml:reference "LOCALIDAD" ;
 
 map:om_049 rml:reference "IGUAL_A_LOCALIDAD" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_050 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Autor" ;
@@ -278,7 +278,7 @@ map:om_051 rml:reference "AUTOR 1" ;
 
 map:om_052 rml:reference "IGUAL_A_AUTOR1" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_053 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Autor" ;
@@ -290,7 +290,7 @@ map:om_054 rml:reference "AUTOR 2" ;
 
 map:om_055 rml:reference "IGUAL_A_AUTOR2" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_056 rdf:type rr:ObjectMap ;
 	rr:constant "http://madridturistsites.es/Autor" ;
@@ -302,7 +302,7 @@ map:om_057 rml:reference "AUTOR 3" ;
 
 map:om_058 rml:reference "IGUAL_A_AUTOR3" ;
 	rdf:type rr:ObjectMap ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:pm_000 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .

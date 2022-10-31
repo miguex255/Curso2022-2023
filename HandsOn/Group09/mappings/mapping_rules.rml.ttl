@@ -644,31 +644,31 @@ map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_TriplesMapAllDat
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
 
 map:s_000 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/{SUBTIPO}/{PK}~iri" .
+	rr:template "http://madridturistsites.es/{SUBTIPO}/{PK}" .
 
 map:s_001 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Vía/{NOMBRE-VIA}~iri" .
+	rr:template "http://madridturistsites.es/Vía/{NOMBRE-VIA}" .
 
 map:s_002 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/TipoVía/{CLASE-VIAL}~iri" .
+	rr:template "http://madridturistsites.es/TipoVía/{CLASE-VIAL}" .
 
 map:s_003 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Barrio/{COD-BARRIO}~iri" .
+	rr:template "http://madridturistsites.es/Barrio/{COD-BARRIO}" .
 
 map:s_004 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Distrito/{COD-DISTRITO}~iri" .
+	rr:template "http://madridturistsites.es/Distrito/{COD-DISTRITO}" .
 
 map:s_005 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Localidad/{LOCALIDAD}~iri" .
+	rr:template "http://madridturistsites.es/Localidad/{LOCALIDAD}" .
 
 map:s_006 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Autor/{AUTOR 1}~iri" .
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 1}" .
 
 map:s_007 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Autor/{AUTOR 2}~iri" .
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 2}" .
 
 map:s_008 rdf:type rr:SubjectMap ;
-	rr:template "http://madridturistsites.es/Autor/{AUTOR 3}~iri" .
+	rr:template "http://madridturistsites.es/Autor/{AUTOR 3}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
 	rml:source "Monumento-ciudad-madrid-updated.csv" ;
