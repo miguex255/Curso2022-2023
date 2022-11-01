@@ -142,19 +142,6 @@
     "description": "Match item Félix Fernández (Q110665647) for cells containing \"FERNÁNDEZ, Félix\" in column AUTOR 4"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 4",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR4",
-    "columnInsertIndex": 12,
-    "description": "Create column IGUAL_A_AUTOR4 at index 12 based on column AUTOR 4 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [],
@@ -348,39 +335,6 @@
     },
     "shareNewTopics": false,
     "description": "Match item Francisco Pérez Mateo (Q6436734) for cells containing \"PÉREZ MATEO, Francisco\" in column AUTOR 5"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 5: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 5",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 5",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR5",
-    "columnInsertIndex": 14,
-    "description": "Create column IGUAL_A_AUTOR5 at index 14 based on column AUTOR 5 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -578,39 +532,6 @@
     "description": "Match item José Tomás (Q5945783) for cells containing \"TOMÁS, José\" in column AUTOR 6"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 6: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 6",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 6",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR6",
-    "columnInsertIndex": 16,
-    "description": "Create column IGUAL_A_AUTOR6 at index 16 based on column AUTOR 6 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -759,12 +680,6 @@
     "description": "Create column IGUAL_A at index 18 based on column AUTOR 7 using expression cell.recon.match.id"
   },
   {
-    "op": "core/column-rename",
-    "oldColumnName": "IGUAL_A",
-    "newColumnName": "IGUAL_A_AUTOR7",
-    "description": "Rename column IGUAL_A to IGUAL_A_AUTOR7"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -880,39 +795,6 @@
     "description": "Match item Miguel Ximénez (Q922735) for cells containing \"XIMÉNEZ, Miguel\" in column AUTOR 8"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 8: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 8",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 8",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR8",
-    "columnInsertIndex": 20,
-    "description": "Create column IGUAL_A_AUTOR8 at index 20 based on column AUTOR 8 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -988,39 +870,6 @@
     "description": "Reconcile cells in column AUTOR 9 to type Q5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 9: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 9",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 9",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR9",
-    "columnInsertIndex": 22,
-    "description": "Create column IGUAL_A_AUTOR9 at index 22 based on column AUTOR 9 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1094,39 +943,6 @@
       "limit": 0
     },
     "description": "Reconcile cells in column AUTOR 10 to type Q5"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 10: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 10",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 10",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR10",
-    "columnInsertIndex": 24,
-    "description": "Create column IGUAL_A_AUTOR10 at index 24 based on column AUTOR 10 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -1244,39 +1060,6 @@
     "description": "Match item José Tomás (Q5945783) for cells containing \"TOMÁS, José\" in column AUTOR 11"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 11: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 11",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 11",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR11",
-    "columnInsertIndex": 26,
-    "description": "Create column IGUAL_A_AUTOR11 at index 26 based on column AUTOR 11 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1350,39 +1133,6 @@
       "limit": 0
     },
     "description": "Reconcile cells in column AUTOR 12 to type Q5"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 12: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 12",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 12",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR12",
-    "columnInsertIndex": 28,
-    "description": "Create column IGUAL_A_AUTOR12 at index 28 based on column AUTOR 12 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -1500,39 +1250,6 @@
     "description": "Match item Antoni Coll i Pi (Q13426381) for cells containing \"COLL, Antonio\" in column AUTOR 13"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 12: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 12",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 13",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR13",
-    "columnInsertIndex": 30,
-    "description": "Create column IGUAL_A_AUTOR13 at index 30 based on column AUTOR 13 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1606,39 +1323,6 @@
       "limit": 0
     },
     "description": "Reconcile cells in column AUTOR 14 to type Q5"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 14: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 14",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 14",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR14",
-    "columnInsertIndex": 32,
-    "description": "Create column IGUAL_A_AUTOR14 at index 32 based on column AUTOR 14 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -1756,39 +1440,6 @@
     "description": "Match item Francesc Escudero i Ribot (Q8962171) for cells containing \"ESCUDERO, Francisco\" in column AUTOR 15"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 15: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 15",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 15",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR15",
-    "columnInsertIndex": 34,
-    "description": "Create column IGUAL_A_AUTOR15 at index 34 based on column AUTOR 15 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1862,39 +1513,6 @@
       "limit": 0
     },
     "description": "Reconcile cells in column AUTOR 16 to type Q5"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 15: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 15",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 16",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR16",
-    "columnInsertIndex": 36,
-    "description": "Create column IGUAL_A_AUTOR16 at index 36 based on column AUTOR 16 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2355,39 +1973,6 @@
     "description": "Match each cell to its best recon candidate in column NOMBRE"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "NOMBRE: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "NOMBRE",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "NOMBRE",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_MONUMENTO",
-    "columnInsertIndex": 2,
-    "description": "Create column IGUAL_A_MONUMENTO at index 2 based on column NOMBRE using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -2419,39 +2004,6 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column IGUAL_A_MONUMENTO using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 17",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR17",
-    "columnInsertIndex": 39,
-    "description": "Create column IGUAL_A_AUTOR17 at index 39 based on column AUTOR 17 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2487,39 +2039,6 @@
     "description": "Text transform on cells in column IGUAL_A_AUTOR17 using expression grel:\"https://www.wikidata.org/entity/\"+value"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 18",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR18",
-    "columnInsertIndex": 41,
-    "description": "Create column IGUAL_A_AUTOR18 at index 41 based on column AUTOR 18 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -2551,39 +2070,6 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column IGUAL_A_AUTOR18 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 19",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR19",
-    "columnInsertIndex": 43,
-    "description": "Create column IGUAL_A_AUTOR19 at index 43 based on column AUTOR 19 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2619,39 +2105,6 @@
     "description": "Text transform on cells in column IGUAL_A_AUTOR19 using expression grel:\"https://www.wikidata.org/entity/\"+value"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 20",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR20",
-    "columnInsertIndex": 45,
-    "description": "Create column IGUAL_A_AUTOR20 at index 45 based on column AUTOR 20 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -2683,39 +2136,6 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column IGUAL_A_AUTOR20 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 21",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR21",
-    "columnInsertIndex": 47,
-    "description": "Create column IGUAL_A_AUTOR21 at index 47 based on column AUTOR 21 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2751,39 +2171,6 @@
     "description": "Text transform on cells in column IGUAL_A_AUTOR21 using expression grel:\"https://www.wikidata.org/entity/\"+value"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 22",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR22",
-    "columnInsertIndex": 49,
-    "description": "Create column IGUAL_A_AUTOR22 at index 49 based on column AUTOR 22 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -2815,39 +2202,6 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column IGUAL_A_AUTOR22 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 23",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR23",
-    "columnInsertIndex": 51,
-    "description": "Create column IGUAL_A_AUTOR23 at index 51 based on column AUTOR 23 using expression cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2883,39 +2237,6 @@
     "description": "Text transform on cells in column IGUAL_A_AUTOR23 using expression grel:\"https://www.wikidata.org/entity/\"+value"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 24",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR24",
-    "columnInsertIndex": 53,
-    "description": "Create column IGUAL_A_AUTOR24 at index 53 based on column AUTOR 24 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -2949,39 +2270,6 @@
     "description": "Text transform on cells in column IGUAL_A_AUTOR24 using expression grel:\"https://www.wikidata.org/entity/\"+value"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 25",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR25",
-    "columnInsertIndex": 55,
-    "description": "Create column IGUAL_A_AUTOR25 at index 55 based on column AUTOR 25 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -3013,5 +2301,44 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column IGUAL_A_AUTOR25 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "grel:value.replace(' ','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE using expression grel:value.replace(' ','')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE-VIA",
+    "expression": "grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE-VIA using expression grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE using expression grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')"
   }
 ]
