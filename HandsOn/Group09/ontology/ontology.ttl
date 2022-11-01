@@ -1,176 +1,209 @@
-@prefix : <http://madridturistsites.es/ontolgy> .
+@prefix : <http://madridturistsites.es#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://madridturistsites.es/ontology>.
+@base <http://madridturistsites.es> .
+
+<http://madridturistsites.es> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://madridturistsites.es#autor
+:autor rdf:type owl:ObjectProperty ;
+       rdfs:domain [ rdf:type owl:Restriction ;
+                     owl:onProperty :autor ;
+                     owl:someValuesFrom :Monumento
+                   ] ;
+       rdfs:range [ rdf:type owl:Restriction ;
+                    owl:onProperty :autor ;
+                    owl:someValuesFrom :Autor
+                  ] .
+
 
+###  http://madridturistsites.es#perteneceA
+:perteneceA rdf:type owl:ObjectProperty .
 
-<http://madridturistsites.es/ontology> rdf:type owl:Ontology .
 
-#               Classes                #
+###  http://madridturistsites.es#seEncuentraEn
+:seEncuentraEn rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Restriction ;
+                             owl:onProperty owl:topObjectProperty ;
+                             owl:someValuesFrom owl:Thing
+                           ] ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty owl:topObjectProperty ;
+                            owl:someValuesFrom owl:Thing
+                          ] .
 
-## http://madridturistsites.es/ontology/Monumento
 
-:Monumento rdf:type owl:Class.
+#################################################################
+#    Data properties
+#################################################################
 
-## http://madridturistsites.es/ontology/EdificaciónSingular
+###  http://madridturistsites.es#codigoBarrio
+:codigoBarrio rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Restriction ;
+                            owl:onProperty owl:topObjectProperty ;
+                            owl:someValuesFrom :Barrio
+                          ] ;
+              rdfs:range xsd:integer .
 
-:EdificaciónSingular rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/Estatua
+###  http://madridturistsites.es#codigoDistrito
+:codigoDistrito rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Restriction ;
+                              owl:onProperty owl:topObjectProperty ;
+                              owl:someValuesFrom :Distrito
+                            ] ;
+                rdfs:range xsd:integer .
 
-:Estatua rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/GrupoEscultórico
+###  http://madridturistsites.es#construidoEn
+:construidoEn rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Restriction ;
+                            owl:onProperty owl:topObjectProperty ;
+                            owl:someValuesFrom :Monumento
+                          ] ;
+              rdfs:range xsd:integer .
 
-:GrupoEscultórico rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/Puente
+###  http://madridturistsites.es#descripcion
+:descripcion rdf:type owl:DatatypeProperty ;
+             rdfs:domain [ rdf:type owl:Restriction ;
+                           owl:onProperty owl:topObjectProperty ;
+                           owl:someValuesFrom :Monumento
+                         ] ;
+             rdfs:range xsd:string .
 
-:Puente rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/Arco
+###  http://madridturistsites.es#nombre
+:nombre rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Restriction ;
+                      owl:onProperty owl:topObjectProperty ;
+                      owl:someValuesFrom owl:Thing
+                    ] ;
+        rdfs:range xsd:string .
 
-:Arco rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/Lápida
+###  http://madridturistsites.es#tieneLatitud
+:tieneLatitud rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Restriction ;
+                            owl:onProperty owl:topObjectProperty ;
+                            owl:someValuesFrom :Monumento
+                          ] ;
+              rdfs:range xsd:float .
 
-:Lápica rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/Escultura
+###  http://madridturistsites.es#tieneLongitud
+:tieneLongitud rdf:type owl:DatatypeProperty ;
+               rdfs:domain [ rdf:type owl:Restriction ;
+                             owl:onProperty owl:topObjectProperty ;
+                             owl:someValuesFrom :Monumento
+                           ] ;
+               rdfs:range xsd:float .
 
-:Escultura rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
 
-## http://madridturistsites.es/ontology/Fuente
+#################################################################
+#    Classes
+#################################################################
 
-:Fuente rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
+###  http://madridturistsites.es#Arco
+:Arco rdf:type owl:Class ;
+      rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontology/Planetario
 
-:Planetario rdf:type owl:Class;
-    rdfs:subClassOf :Monumento.
+###  http://madridturistsites.es#Autor
+:Autor rdf:type owl:Class .
 
-## http://madridturistsites.es/ontology/Autor
 
-:Autor rdf:type owl:Class.
+###  http://madridturistsites.es#Barrio
+:Barrio rdf:type owl:Class .
 
 
-## http://madridturistsites.es/ontology/Dirección
+###  http://madridturistsites.es#Direccion
+:Direccion rdf:type owl:Class .
 
-:Dirección rdf:type owl:Class.
 
+###  http://madridturistsites.es#Distrito
+:Distrito rdf:type owl:Class .
 
-## http://madridturistsites.es/ontology/Vía
 
-:Vía rdf:type owl:Class.
+###  http://madridturistsites.es#EdificacionSingular
+:EdificacionSingular rdf:type owl:Class ;
+                     rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontology/TipoVía
 
-:TipoVía rdf:type owl:Class.
+###  http://madridturistsites.es#Escultura
+:Escultura rdf:type owl:Class ;
+           rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontology/Barrio
 
-:Barrio rdf:type owl:Class.
+###  http://madridturistsites.es#Estatua
+:Estatua rdf:type owl:Class ;
+         rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontology/Distrito
 
-:Distrito rdf:type owl:Class.
+###  http://madridturistsites.es#Fuente
+:Fuente rdf:type owl:Class ;
+        rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontology/Localidad
 
-:Localidad rdf:type owl:Class.
+###  http://madridturistsites.es#GrupoEscultorico
+:GrupoEscultorico rdf:type owl:Class ;
+                  rdfs:subClassOf :Monumento .
 
 
-#            Object Properties         #
+###  http://madridturistsites.es#Lapida
+:Lapida rdf:type owl:Class ;
+        rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontolgy/nombre
 
-:nombre rdf:type owl:ObjectProperty;
-    rdfs:range xsd:string.
+###  http://madridturistsites.es#Localidad
+:Localidad rdf:type owl:Class .
 
 
-## http://madridturistsites.es/ontolgy/descripción
+###  http://madridturistsites.es#Monumento
+:Monumento rdf:type owl:Class .
 
-:descripción rdf:type owl:ObjectProperty;
-    rdfs:range xsd:string.
 
+###  http://madridturistsites.es#Planetario
+:Planetario rdf:type owl:Class ;
+            rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontolgy/consturidoEn
 
-:construidoEn rdf:type owl:ObjectProperty;
-    rdfs:domain :Monumento;
-    rdfs:range xsd:integer.
+###  http://madridturistsites.es#Puente
+:Puente rdf:type owl:Class ;
+        rdfs:subClassOf :Monumento .
 
-## http://madridturistsites.es/ontolgy/autor
 
-:autor rdf:type owl:ObjectProperty;
-    rdfs:domain :Monumento;
-    rdfs:range :Autor.
-    
+###  http://madridturistsites.es#TipoVia
+:TipoVia rdf:type owl:Class .
 
-## http://madridturistsites.es/ontolgy/seEncuentraEn
 
-:seEncuentraEn rdf:type owl:ObjectProperty;
-    rdfs:domain :Monumento;
-    rdfs:range :Dirección.
-    
-## http://madridturistsites.es/ontolgy/tieneLatitud
+###  http://madridturistsites.es#Via
+:Via rdf:type owl:Class .
 
-:tieneLatitud rdf:type owl:ObjectProperty;
-    rdfs:domain :Monumento;
-    rdfs:range :xsd:float.
 
+#################################################################
+#    General axioms
+#################################################################
 
-## http://madridturistsites.es/ontolgy/tieneLongitud
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Arco
+                :EdificacionSingular
+                :Escultura
+                :Estatua
+                :Fuente
+                :GrupoEscultorico
+                :Lapida
+                :Planetario
+                :Puente
+              )
+] .
 
-:tieneLongitud rdf:type owl:ObjectProperty;
-    rdfs:domain :Monumento;
-    rdfs:range :xsd:float.
 
-
-## http://madridturistsites.es/ontolgy/numero
-
-:numero rdf:type owl:ObjectProperty;
-    rdfs:domain :Dirección;
-    rdfs:range xsd:integer.
-
-
-## http://madridturistsites.es/ontolgy/enVía
-
-:enVía rdf:type owl:ObjectProperty;
-    rdfs:domain :Dirección;
-    rdfs:range :Vía.
-
-## http://madridturistsites.es/ontolgy/perteneceA
-
-:perteneceA rdf:type owl:ObjectProperty.
-
-
-## http://madridturistsites.es/ontolgy/codigoBarrio
-
-:codigoBarrio rdf:type owl:ObjectProperty;
-    rdfs:domain :Barrio;
-    rdfs:range xsd:integer.
-
-## http://madridturistsites.es/ontolgy/codigoDistrito
-
-:codigoDistrito rdf:type owl:ObjectProperty ;
-    rdfs:domain :Distrito;
-    rdfs:range xsd:integer.
-
-
-## http://madridturistsites.es/ontolgy/codigoPostal
-
-:codigoDistrito rdf:type owl:ObjectProperty ;
-    rdfs:domain :Distrito;
-    rdfs:range xsd:integer.
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
