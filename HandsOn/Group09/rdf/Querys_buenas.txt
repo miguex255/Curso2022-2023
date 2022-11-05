@@ -1,0 +1,56 @@
+**Buscar por texto en descripción
+select ?o ?label
+where
+{
+ ?o ns:descripcion ?label .
+    FILTER(REGEX(str(?label),"Los portadores de la antorcha","i"))
+
+}
+
+# Monumentos construidos en el año indicado:
+select ?monumento
+where
+{
+ ?monumento ns:construidoEn 1950
+}
+
+# Monumentos en el rango de longitud y latitud indicados:
+select ?monumento ?lat ?lon
+where
+{
+ ?monumento ns:tieneLatitud ?lat .
+ ?monumento ns:tieneLongitud ?lon .
+ FILTER(40.41 <= ?lat <= 40.42) .
+ FILTER(-3.70 <= ?lon <= -3.65) .
+}
+
+#Conocer monumetos construidos antiguos que una fecha dada
+select ?m ?date 
+where
+{
+?m ns:construidoEn ?date.
+  FILTER(2000>=?date)
+}
+
+#Conocer monumento por calle
+select distinct ?m ?via
+where
+{
+?m ns:seEncuentraEn ?via.
+  FILTER(REGEX(str(?via),"SANISIDRO","i")).
+}
+
+# Ubicación completa de un monumento:
+select ?name ?via ?desc ?const ?lat ?lon ?wiki ?cp
+where
+{
+ 
+ ?m ns:seEncuentraEn ?via .
+ ?m ns:nombre ?name .
+ ?m ns:descripcion ?desc .
+ ?m ns:construidoEn ?const .
+ ?m ns:tieneLatitud ?lat .
+ ?m ns:tieneLongitud ?lon .
+ ?m <http://www.w3.org/2002/07/owl#sameAs> ?wiki .
+
+}
