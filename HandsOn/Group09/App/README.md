@@ -6,11 +6,11 @@ Users can filter by Street and by year of construction.
 
 ||Folder |Content|
 |-------------|---------------|--------------------|
-|1|.idea | Contains data about the python enviroment |
-|2| venv | Contains data about the python enviroment |
-|3| rdf | Contains nt files that contains the triples of the ontology |
-|4| templates | Contains the html files of the app |
-|5| main.py | Source Code of the app |
+|1| Install_libs | Contains scripts that helps to install all app dependences |
+|2| rdf | Contains nt files that contains the triples of the ontology |
+|2| static | Contains the static files of the app |
+|3| templates | Contains the html files of the app |
+|4| main.py | Source Code of the app |
 
 
 ### App launch

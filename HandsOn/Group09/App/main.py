@@ -10,12 +10,14 @@ from rdflib.plugins.sparql import prepareQuery
 from pathlib import Path
 import time
 
+
+
 class MyResponse(Response):
     default_mimetype = 'application/json'
 
 # CONFIGURACION DE LA APP
 app = Flask(__name__)
-app.secret_key = 'secret_key'
+app.secret_key = 'clave secreta'
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config["CACHE_TYPE"] = "null"
 
@@ -35,10 +37,11 @@ g.namespace_manager.bind('owl', Namespace("http://www.w3.org/2002/07/owl#"), ove
 ns = Namespace("http://madridturistsites.es/ontology/")
 ns2 = Namespace("http://madridturistsites.es/resource/")
 owl = Namespace("http://www.w3.org/2002/07/owl#")
-g.parse("./rdf/Monumentos.nt", format="nt")
+g.parse("./rdf/Monumentos-with-links.nt", format="nt")
 
 
 # MAIN Y METODOS PARA MOSTRAR PAGINAS
+    
 
 @app.route("/")
 def main():
@@ -59,31 +62,25 @@ def main():
     except Exception as e:
         return json.dumps({'error': e})
 
+
 @app.route("/results", methods=['POST', 'GET'])
 def results():
     return render_template("results.html")
 
-@app.route("/anho", methods=['POST', 'GET'])
-def anho():
-    return render_template("anho.html")
-
 @app.route("/busqueda", methods=['POST', 'GET'])
 def busqueda():
     try:
-        hora=time.strftime("%d%m%Y_%H%M%S")
-        filename=str(hora)+".json"
-        fileroute="../static/"+hora+".json"
-        filepath=Path(fileroute)
-        filetoOpne=filepath/filename
         _requestAnho = request.args.get('anho')
+        _requestAmbos = request.args.get('ambos')
+        _ambos = str(_requestAmbos)
         _anho = str(_requestAnho)
         _request=request.args.get('streetName')
         _streetName=str(_request)
         _streetName = _streetName.upper()
+        if _ambos == '0':
+            return functionAmbos(_streetName, _anho)
         if len(_anho)>0:
-            if(functionAnho(_anho)==0):
-                return render_template("error.html",error="El distrito introducido no es correcto o no existe")
-            return render_template("anho.html",anho=_anho)
+            return functionAnho(_anho)   
         _jsonList= []
 
         # SPARQL query
@@ -111,54 +108,125 @@ def busqueda():
                 if propiedad == "http://madridturistsites.es/ontology/seEncuentraEn":
                     tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Via/","")
                 if propiedad == "http://madridturistsites.es/ontology/autor":
+                    autor = objeto
+                    autor2 = autor.replace("http://madridturistsites.es/ontology/Autor/","http://madridturistsites.es/resource/Autor/")
+                    queryAutor = "select distinct ?o where {" \
+                        "<"+autor2+"> ?p  ?o ."\
+                        "?m <http://www.w3.org/2002/07/owl#sameAs> ?o .}"
+                    q6 = prepareQuery(queryAutor)
+                    for r4 in g.query(q6):
+                        tojson["parecidoAutor"] = str(r4[0])
                     tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Autor/","")
             # break
             _jsonList.append(tojson)
         # END SPARQL query
         with open("./static/query.json", "w", encoding='utf-8') as file:
             json.dump(_jsonList, file)
-        #os.rename("./static/query.json", "./static/{}.json".format(hora))
-        #return json.dumps(_jsonList)
         if(len(_jsonList)==0):
-            return render_template("error.html",error="El distrito introducido no es correcto o no existe")
-        return render_template("results.html",street=_streetName,enlace="https://google.com/search?q="+_streetName)
+            return render_template("error.html",error="El recurso al que intentas acceder no esta disponible")
+        return render_template("results.html",street=_streetName,enlace="https://google.com/search?q="+_streetName, solo = True)
     except Exception as e:
         return json.dumps({'error': e})
 
-def functionAnho(_anho):
-    _jsonList= []
-    # SPARQL query
-    query = "select distinct ?Object " \
-                " where{ ?Object <http://madridturistsites.es/ontology/construidoEn> ?anho. " \
-                " FILTER('"+_anho+"'>=str(?anho)) }"
-    q3 = prepareQuery(query)
-    for r in g.query(q3):
-        tojson = {'id': str(r[0])}
-        query2 = "select distinct ?Property " \
-                     "where { ?m ?Property ?Object .}"
-        q4 = prepareQuery(query2)
-        for r2 in g.query(q4, initBindings={"m": r[0]}):
-            query3 = "select distinct ?Object " \
-                         "where { ?m ?p ?Object .}"
-            q5 = prepareQuery(query3)
-            for r3 in g.query(q5, initBindings={"m": r[0], "p": r2[0]}):
-                propiedad = str(r2[0])
-                objeto = str(r3[0])
-            if propiedad != "http://www.w3.org/1999/02/22-rdf-syntax-ns#type":
-                tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto
-            if propiedad == "http://www.w3.org/2002/07/owl#sameAs":
-                tojson[propiedad.replace("http://www.w3.org/2002/07/owl#sameAs", "parecidoA")] = objeto
-            if propiedad == "http://madridturistsites.es/ontology/seEncuentraEn":
-                tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Via/","")
-            if propiedad == "http://madridturistsites.es/ontology/autor":
-                tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Autor/","")
-            # break
-        _jsonList.append(tojson)
-        # END SPARQL query
-    with open("./static/query.json", "w", encoding='utf-8') as file:
-        json.dump(_jsonList, file)
-    return len(_jsonList)
 
+def functionAnho(_anho):
+    try:
+        _jsonList= []
+            # SPARQL query
+        query = "select distinct ?Object " \
+                " where{ ?Object <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://madridturistsites.es/ontology/MadridTuristSites/>. " \
+                " ?Object <http://madridturistsites.es/ontology/construidoEn> ?year " \
+                "FILTER('"+_anho+"'>=str(?year))}"
+        q3 = prepareQuery(query)
+        for r in g.query(q3):
+            tojson = {'id': str(r[0])}
+            query2 = "select distinct ?Property " \
+                     "where { ?m ?Property ?Object .}"
+            q4 = prepareQuery(query2)
+            for r2 in g.query(q4, initBindings={"m": r[0]}):
+                # print(r[0], r2[0])
+                query3 = "select distinct ?Object " \
+                         "where { ?m ?p ?Object .}"
+                q5 = prepareQuery(query3)
+                for r3 in g.query(q5, initBindings={"m": r[0], "p": r2[0]}):
+                    propiedad = str(r2[0])
+                    objeto = str(r3[0])
+                if propiedad != "http://www.w3.org/1999/02/22-rdf-syntax-ns#type":
+                    tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto
+                if propiedad == "http://www.w3.org/2002/07/owl#sameAs":
+                    tojson[propiedad.replace("http://www.w3.org/2002/07/owl#sameAs", "parecidoA")] = objeto
+                if propiedad == "http://madridturistsites.es/ontology/seEncuentraEn":
+                    tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Via/","")
+                if propiedad == "http://madridturistsites.es/ontology/autor":
+                    autor = objeto
+                    autor2 = autor.replace("http://madridturistsites.es/ontology/Autor/","http://madridturistsites.es/resource/Autor/")
+                    queryAutor = "select distinct ?o where {" \
+                        "<"+autor2+"> ?p  ?o ."\
+                        "?m <http://www.w3.org/2002/07/owl#sameAs> ?o .}"
+                    q6 = prepareQuery(queryAutor)
+                    for r4 in g.query(q6):
+                        tojson["parecidoAutor"] = str(r4[0])
+                    tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Autor/","")
+            # break
+            _jsonList.append(tojson)
+        # END SPARQL query
+        with open("./static/query.json", "w", encoding='utf-8') as file:
+            json.dump(_jsonList, file)
+        if(len(_jsonList)==0):
+            return render_template("error.html",error="El recurso al que intentas acceder no esta disponible")
+        return render_template("results.html", anho = _anho, solo = False)
+    except Exception as e:
+        return json.dumps({'error': e})
+
+def functionAmbos(_streetName,_anho):
+    try:
+        _jsonList= []
+            # SPARQL query
+        query = "select distinct ?Object " \
+                " where{ ?Object <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://madridturistsites.es/ontology/MadridTuristSites/>. " \
+                " ?Object <http://madridturistsites.es/ontology/seEncuentraEn> " + "<http://madridturistsites.es/ontology/Via/" + _streetName + '>.'\
+                " ?Object <http://madridturistsites.es/ontology/construidoEn> ?year " \
+                "FILTER('"+_anho+"'>=str(?year))}"
+        q3 = prepareQuery(query)
+        for r in g.query(q3):
+            tojson = {'id': str(r[0])}
+            query2 = "select distinct ?Property " \
+                     "where { ?m ?Property ?Object .}"
+            q4 = prepareQuery(query2)
+            for r2 in g.query(q4, initBindings={"m": r[0]}):
+                # print(r[0], r2[0])
+                query3 = "select distinct ?Object " \
+                         "where { ?m ?p ?Object .}"
+                q5 = prepareQuery(query3)
+                for r3 in g.query(q5, initBindings={"m": r[0], "p": r2[0]}):
+                    propiedad = str(r2[0])
+                    objeto = str(r3[0])
+                if propiedad != "http://www.w3.org/1999/02/22-rdf-syntax-ns#type":
+                    tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto
+                if propiedad == "http://www.w3.org/2002/07/owl#sameAs":
+                    tojson[propiedad.replace("http://www.w3.org/2002/07/owl#sameAs", "parecidoA")] = objeto
+                if propiedad == "http://madridturistsites.es/ontology/seEncuentraEn":
+                    tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Via/","")
+                if propiedad == "http://madridturistsites.es/ontology/autor":
+                    autor = objeto
+                    autor2 = autor.replace("http://madridturistsites.es/ontology/Autor/","http://madridturistsites.es/resource/Autor/")
+                    queryAutor = "select distinct ?o where {" \
+                        "<"+autor2+"> ?p  ?o ."\
+                        "?m <http://www.w3.org/2002/07/owl#sameAs> ?o .}"
+                    q6 = prepareQuery(queryAutor)
+                    for r4 in g.query(q6):
+                        tojson["parecidoAutor"] = str(r4[0])
+                    tojson[propiedad.replace("http://madridturistsites.es/ontology/", "")] = objeto.replace("http://madridturistsites.es/ontology/Autor/","")
+            # break
+            _jsonList.append(tojson)
+        # END SPARQL query
+        with open("./static/query.json", "w", encoding='utf-8') as file:
+            json.dump(_jsonList, file)
+        if(len(_jsonList)==0):
+            return render_template("error.html",error="El recurso al que intentas acceder no esta disponible")
+        return render_template("results.html",street=_streetName,enlace="https://google.com/search?q="+_streetName, anho = _anho, ambos = True)
+    except Exception as e:
+        return json.dumps({'error': e})
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app.run(port=5000)

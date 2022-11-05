@@ -26,9 +26,9 @@
                                     $('#cuerpo-tabla').append('<tr>'+                  
                                         '<td>'+value.nombre+'</a></td>'+
                                         '<td class="tiempo">'+value.descripcion+'</td>'+
-                                        '<td class="autor">'+value.autor+'</td>'+
+                                        '<td class="autor"><a href="'+value.parecidoAutor+'">'+value.autor+'</a></td>'+
                                         '<td class="tiempo">'+value.construidoEn+'</td>'+
-                                        '<td class="tiempo">'+value.seEncuentraEn+'</td>'+
+                                        '<td class="tiempo">Calle '+value.seEncuentraEn+'</td>'+
                                         '<td class="Coordenadas">'+value.tieneLongitud+', '+value.tieneLatitud+'</td>' +
                                         '<td class="Mas Informacion"><a href="'+value.parecidoA+'">Mas info</a></td>'                      
                                     +'</tr>')
@@ -47,7 +47,7 @@
             <body>
          
                 <nav class="navbar navbar-expand-lg navbar-dark text right bg-dark" >
-                    <a class="navbar-brand" href="/"><i class="bg- p-2 rounded fas fa-archway fa-3x"></i> </a> 
+                    <a class="navbar-brand" href="/"><img id="imgRedonda" src="{{ url_for('static', filename = 'madrid.png')}}"> </a> 
                     <h4 class="nav-item text-white">Madrid Turist Sites</h4>
                 </nav>
                  
@@ -55,12 +55,22 @@
                 
             <div style="background-color: lightblue;">
                 <header>
-                 <h1 class="text-center p-5 text-success" ><a href="/" class="text-decoration-none text-dark"><span class="badge badge- mr-3"><i class="fas fa-light fa-archway fa-2x text-decoration-none"></i></span>Madrid Turist Sites</a></h1> 
+                 <h1 class="text-center p-5 text-success" ><a href="/" class="text-decoration-none text-dark"><span class="badge badge- mr-3"><img id="imgRedonda" src="{{ url_for('static', filename = 'madrid.png')}}"></span>Madrid Turist Sites</a></h1> 
                 </header>
                 <div class="p-4">
                     <center>
+                        {% if solo == True %}
                         <h4>Estos son los sitios turísticos ubicados en {{street}}.</h4> 
                         <h5>Para mas informacion sobre {{street}} pulse <a href="{{enlace}}">aqui</a></h5>
+                        {% endif %}
+                        {% if solo == False %}
+                        <h4>Estos son los sitios turísticos creados antes de {{anho}}.</h4>
+                        {% endif %}
+                        {% if ambos == True %}
+                        <h4>Estos son los sitios turísticos creados antes de {{anho}}.</h4>
+                        <h4>Y se encuentran ubicados en {{street}}.</h4> 
+                        <h5>Para mas informacion sobre {{street}} pulse <a href="{{enlace}}">aqui</a></h5>
+                        {% endif %}
                     </center>
                 </div>
                 <center>    
