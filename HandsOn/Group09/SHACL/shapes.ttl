@@ -1,172 +1,181 @@
-@prefix :      <http://madridturistsites.es#> .
-@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix :      <http://madridturistsites.es/> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
-@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dcat:  <http://www.w3.org/ns/dcat#> .
-@prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <https://astrea.linkeddata.es/shapes#dd904ae9b6cbe33e31127553dd9eba5b>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Direccion> .
+        sh:targetClass  :Direccion .
+
+<https://astrea.linkeddata.es/shapes#0ffbbc10c4b7470442213c88ac494eba>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:float ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://madridturistsites.es/ontology/tieneLongitud> ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
 
 <https://astrea.linkeddata.es/shapes#69fcb6cda6d857d8ff8f0ba09512367f>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/esculturaconceptualoabstracta> .
+        sh:targetClass  :esculturaconceptualoabstracta .
 
 <https://astrea.linkeddata.es/shapes#c40801fefc9f79bf67101a494f5b3782>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Monumento> .
+        sh:property     <https://astrea.linkeddata.es/shapes#094e5c7de8bf92befa5d01c22f368838> , <https://astrea.linkeddata.es/shapes#0ffbbc10c4b7470442213c88ac494eba> , <https://astrea.linkeddata.es/shapes#49021582634f51b1505ba83d5c368afa> , <https://astrea.linkeddata.es/shapes#002debe41547ceb5dd4164b241cd2d87> , <https://astrea.linkeddata.es/shapes#fed1ff64cec1f0409c25bb9009d9ba22> ;
+        sh:targetClass  :Monumento .
 
-<https://astrea.linkeddata.es/shapes#e0ec166b6cc4c45544f1bab154365189>
+<https://astrea.linkeddata.es/shapes#49021582634f51b1505ba83d5c368afa>
         a            sh:PropertyShape ;
-        sh:datatype  xsd:string ;
+        sh:datatype  xsd:float ;
         sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/nombre> ;
-        sh:pattern   ".*" .
+        sh:path      <http://madridturistsites.es/ontology/tieneLatitud> ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
 
 <https://astrea.linkeddata.es/shapes#a77c3fe6541c13c91ffdbb986c57541a>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/elementodeornamentacion> .
+        sh:targetClass  :elementodeornamentacion .
 
 <https://astrea.linkeddata.es/shapes#06e072e7c978d7435e8610618adce83e>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Localidad> .
+        sh:targetClass  :Localidad .
 
-<https://astrea.linkeddata.es/shapes#5182aa75c73badf23218586428820f61>
+<https://astrea.linkeddata.es/shapes#002debe41547ceb5dd4164b241cd2d87>
         a            sh:PropertyShape ;
-        sh:datatype  xsd:integer ;
+        sh:datatype  xsd:string ;
         sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/codigoBarrio> ;
-        sh:pattern   "[\\-+]?[0-9]+" .
-
-<https://astrea.linkeddata.es/shapes#27526c50338566169e07409b0b7be215>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/puenteconstruccioncivi> .
+        sh:path      <http://madridturistsites.es/ontology/descripcion> ;
+        sh:pattern   ".*" .
 
 <http://astrea.linkeddata.es/report>
         a       <https://w3id.org/def/astrea#ShapeReport> ;
         <https://w3id.org/def/astrea#contains>
-                <https://astrea.linkeddata.es/shapes#27526c50338566169e07409b0b7be215> , <https://astrea.linkeddata.es/shapes#06e072e7c978d7435e8610618adce83e> , <https://astrea.linkeddata.es/shapes#5182aa75c73badf23218586428820f61> , <https://astrea.linkeddata.es/shapes#ac052ded1bd90270055f4edd2033aea7> , <https://astrea.linkeddata.es/shapes#6385aaf74f27d6c5c0e7eab39c913a18> , <https://astrea.linkeddata.es/shapes#d0fc4431edebc8217f672ebb3fb16e00> , <https://astrea.linkeddata.es/shapes#c7304150dc972bc19ae8f0e93b7b7ab1> , <https://astrea.linkeddata.es/shapes#64d4efeacdc383da5b08316011318248> , <https://astrea.linkeddata.es/shapes#910db40f001672ba1ec1ad23c0bbfc0c> , <https://astrea.linkeddata.es/shapes#b0d92a18ba2c85302003e5a393122495> , <https://astrea.linkeddata.es/shapes#1e24218b71ce75ccfcabec4a1623d659> , <https://astrea.linkeddata.es/shapes#c7318e410f9b35fa2a1e7c46e8540098> , <https://astrea.linkeddata.es/shapes#79b19f98427085bf7ca224f6edc6c50b> , <https://astrea.linkeddata.es/shapes#5b707c762d9b5e359506514d36952cc6> , <https://astrea.linkeddata.es/shapes#1732b5709eeeb153bfc31be27538f87d> , <https://astrea.linkeddata.es/shapes#f5e9e1c166e5f8c3b813dd839e978a6d> , <https://astrea.linkeddata.es/shapes#e0da16db319db88b067eaf201a37f4d6> , <https://astrea.linkeddata.es/shapes#129901a3111bf7d1f60fa86df0d5ced4> , <https://astrea.linkeddata.es/shapes#094e5c7de8bf92befa5d01c22f368838> , <https://astrea.linkeddata.es/shapes#a77c3fe6541c13c91ffdbb986c57541a> , <https://astrea.linkeddata.es/shapes#a15b467b61a9486bbd649e73bcd602f0> , <https://astrea.linkeddata.es/shapes#e0ec166b6cc4c45544f1bab154365189> , <https://astrea.linkeddata.es/shapes#150cb43b6148814b76067b82c4d815e1> , <https://astrea.linkeddata.es/shapes#dd904ae9b6cbe33e31127553dd9eba5b> , <https://astrea.linkeddata.es/shapes#69fcb6cda6d857d8ff8f0ba09512367f> , <https://astrea.linkeddata.es/shapes#e6b0aaac835ea02a95f66e113506404e> , <https://astrea.linkeddata.es/shapes#c40801fefc9f79bf67101a494f5b3782> ;
+                <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#06e072e7c978d7435e8610618adce83e> , <https://astrea.linkeddata.es/shapes#6385aaf74f27d6c5c0e7eab39c913a18> , <https://astrea.linkeddata.es/shapes#d0fc4431edebc8217f672ebb3fb16e00> , <https://astrea.linkeddata.es/shapes#c7304150dc972bc19ae8f0e93b7b7ab1> , <https://astrea.linkeddata.es/shapes#49021582634f51b1505ba83d5c368afa> , <https://astrea.linkeddata.es/shapes#910db40f001672ba1ec1ad23c0bbfc0c> , <https://astrea.linkeddata.es/shapes#1c89394b7bdbeaec856edaea24f887e4> , <https://astrea.linkeddata.es/shapes#b0d92a18ba2c85302003e5a393122495> , <https://astrea.linkeddata.es/shapes#ac826b3237b97fe85275724a76cd0d0c> , <https://astrea.linkeddata.es/shapes#1e24218b71ce75ccfcabec4a1623d659> , <https://astrea.linkeddata.es/shapes#c7318e410f9b35fa2a1e7c46e8540098> , <https://astrea.linkeddata.es/shapes#79b19f98427085bf7ca224f6edc6c50b> , <https://astrea.linkeddata.es/shapes#3d2c01b3d92ecf80bf8de0e30acf8fcc> , <https://astrea.linkeddata.es/shapes#0ffbbc10c4b7470442213c88ac494eba> , <https://astrea.linkeddata.es/shapes#1732b5709eeeb153bfc31be27538f87d> , <https://astrea.linkeddata.es/shapes#f5e9e1c166e5f8c3b813dd839e978a6d> , <https://astrea.linkeddata.es/shapes#e0da16db319db88b067eaf201a37f4d6> , <https://astrea.linkeddata.es/shapes#129901a3111bf7d1f60fa86df0d5ced4> , <https://astrea.linkeddata.es/shapes#002debe41547ceb5dd4164b241cd2d87> , <https://astrea.linkeddata.es/shapes#094e5c7de8bf92befa5d01c22f368838> , <https://astrea.linkeddata.es/shapes#a77c3fe6541c13c91ffdbb986c57541a> , <https://astrea.linkeddata.es/shapes#a15b467b61a9486bbd649e73bcd602f0> , <https://astrea.linkeddata.es/shapes#fed1ff64cec1f0409c25bb9009d9ba22> , <https://astrea.linkeddata.es/shapes#dd904ae9b6cbe33e31127553dd9eba5b> , <https://astrea.linkeddata.es/shapes#69fcb6cda6d857d8ff8f0ba09512367f> , <https://astrea.linkeddata.es/shapes#9a81ea61ad3ee78d0b9befb7454f9145> , <https://astrea.linkeddata.es/shapes#c40801fefc9f79bf67101a494f5b3782> ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
                 <https://astrea.linkeddata.es/report/0620946147> .
 
 <https://astrea.linkeddata.es/shapes#094e5c7de8bf92befa5d01c22f368838>
         a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI .
-
-<https://astrea.linkeddata.es/shapes#e6b0aaac835ea02a95f66e113506404e>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:float ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/tieneLongitud> ;
-        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
-
-<https://astrea.linkeddata.es/shapes#6385aaf74f27d6c5c0e7eab39c913a18>
-        a            sh:PropertyShape ;
+        sh:class     :Autor ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      <http://madridturistsites.es/perteneceA> .
+        sh:path      :autor .
 
-<https://astrea.linkeddata.es/shapes#150cb43b6148814b76067b82c4d815e1>
+<https://astrea.linkeddata.es/shapes#9a81ea61ad3ee78d0b9befb7454f9145>
         a            sh:PropertyShape ;
         sh:datatype  xsd:integer ;
         sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/codigoDistrito> ;
+        sh:path      <http://madridturistsites.es/ontology/codigoBarrio> ;
         sh:pattern   "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#6385aaf74f27d6c5c0e7eab39c913a18>
+        a            sh:PropertyShape ;
+        sh:class     owl:Thing ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :perteneceA .
 
 <https://astrea.linkeddata.es/shapes#a15b467b61a9486bbd649e73bcd602f0>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/elementoconmemorativolapida> .
+        sh:targetClass  :elementoconmemorativolapida .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b0d92a18ba2c85302003e5a393122495> , <https://astrea.linkeddata.es/shapes#6385aaf74f27d6c5c0e7eab39c913a18> , <https://astrea.linkeddata.es/shapes#3d2c01b3d92ecf80bf8de0e30acf8fcc> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#fed1ff64cec1f0409c25bb9009d9ba22>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:integer ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://madridturistsites.es/ontology/construidoEn> ;
+        sh:pattern   "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#79b19f98427085bf7ca224f6edc6c50b>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/fuenteestanquelaminadeagua> .
+        sh:targetClass  :fuenteestanquelaminadeagua .
+
+<https://astrea.linkeddata.es/shapes#3d2c01b3d92ecf80bf8de0e30acf8fcc>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://madridturistsites.es/ontology/nombre> ;
+        sh:pattern   ".*" .
 
 <https://astrea.linkeddata.es/shapes#1e24218b71ce75ccfcabec4a1623d659>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Distrito> .
-
-<https://astrea.linkeddata.es/shapes#c7304150dc972bc19ae8f0e93b7b7ab1>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/edificacionsingular> .
+        sh:property     <https://astrea.linkeddata.es/shapes#1c89394b7bdbeaec856edaea24f887e4> ;
+        sh:targetClass  :Distrito .
 
 <https://astrea.linkeddata.es/shapes#129901a3111bf7d1f60fa86df0d5ced4>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Via> .
+        sh:targetClass  :Via .
+
+<https://astrea.linkeddata.es/shapes#c7304150dc972bc19ae8f0e93b7b7ab1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :edificacionsingular .
 
 <https://astrea.linkeddata.es/shapes#c7318e410f9b35fa2a1e7c46e8540098>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/grupoescultorico> .
+        sh:targetClass  :grupoescultorico .
 
 <https://astrea.linkeddata.es/shapes#b0d92a18ba2c85302003e5a393122495>
         a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI .
+        sh:class     owl:Thing ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :seEncuentraEn .
 
 <https://astrea.linkeddata.es/shapes#1732b5709eeeb153bfc31be27538f87d>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/TipoVia> .
+        sh:targetClass  :TipoVia .
+
+<https://astrea.linkeddata.es/shapes#1c89394b7bdbeaec856edaea24f887e4>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:integer ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://madridturistsites.es/ontology/codigoDistrito> ;
+        sh:pattern   "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/report/0620946147>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "[line: 21, col: 13] Lexical form '04/11/2022' not valid for datatype XSD date\n" ;
+                "Shapes generated with no errors" ;
         <https://w3id.org/def/astrea#statusCode>
-                "206"^^xsd:int .
-
-<https://astrea.linkeddata.es/shapes#ac052ded1bd90270055f4edd2033aea7>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:integer ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/construidoEn> ;
-        sh:pattern   "[\\-+]?[0-9]+" .
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#f5e9e1c166e5f8c3b813dd839e978a6d>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Autor> .
+        sh:targetClass  :Autor .
 
 <https://astrea.linkeddata.es/shapes#910db40f001672ba1ec1ad23c0bbfc0c>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/Barrio> .
+        sh:property     <https://astrea.linkeddata.es/shapes#9a81ea61ad3ee78d0b9befb7454f9145> ;
+        sh:targetClass  :Barrio .
 
 <https://astrea.linkeddata.es/shapes#e0da16db319db88b067eaf201a37f4d6>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/estatua> .
-
-<https://astrea.linkeddata.es/shapes#5b707c762d9b5e359506514d36952cc6>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:string ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/descripcion> ;
-        sh:pattern   ".*" .
+        sh:targetClass  :estatua .
 
 <https://astrea.linkeddata.es/shapes#d0fc4431edebc8217f672ebb3fb16e00>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://madridturistsites.es/puertaarcotriunfal> .
+        sh:targetClass  :puertaarcotriunfal .
 
-<https://astrea.linkeddata.es/shapes#64d4efeacdc383da5b08316011318248>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:float ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://madridturistsites.es/tieneLatitud> ;
-        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+<https://astrea.linkeddata.es/shapes#ac826b3237b97fe85275724a76cd0d0c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :puenteconstruccioncivil .
