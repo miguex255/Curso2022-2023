@@ -5,8 +5,21 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://madridturistsites.es> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@base <http://madridturistsites.es> .
 
 <http://madridturistsites.es> rdf:type owl:Ontology .
+#################################################################
+#   Metadata
+#################################################################
+dcat:catalog a dcat:Catalog;
+dct:title "RDF de monumentos en Madrid";
+rdfs:label "Monumentos Madrid RDF";
+dct:description "";
+dct:creator "Grupo 9";
+dct:created "04/11/2022"^^xsd:date.
 
 #################################################################
 #    Object Properties
