@@ -142,30 +142,17 @@
     "description": "Match item Félix Fernández (Q110665647) for cells containing \"FERNÁNDEZ, Félix\" in column AUTOR 4"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 4",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR4",
-    "columnInsertIndex": 12,
-    "description": "Create column IGUAL_A_AUTOR4 at index 12 based on column AUTOR 4 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [],
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR4",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR4 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR4 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -350,39 +337,6 @@
     "description": "Match item Francisco Pérez Mateo (Q6436734) for cells containing \"PÉREZ MATEO, Francisco\" in column AUTOR 5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 5: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 5",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 5",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR5",
-    "columnInsertIndex": 14,
-    "description": "Create column IGUAL_A_AUTOR5 at index 14 based on column AUTOR 5 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -409,11 +363,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR5",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR5 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR5 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -578,39 +532,6 @@
     "description": "Match item José Tomás (Q5945783) for cells containing \"TOMÁS, José\" in column AUTOR 6"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 6: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 6",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 6",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR6",
-    "columnInsertIndex": 16,
-    "description": "Create column IGUAL_A_AUTOR6 at index 16 based on column AUTOR 6 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -637,11 +558,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR6",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR6 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR6 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -759,12 +680,6 @@
     "description": "Create column IGUAL_A at index 18 based on column AUTOR 7 using expression cell.recon.match.id"
   },
   {
-    "op": "core/column-rename",
-    "oldColumnName": "IGUAL_A",
-    "newColumnName": "IGUAL_A_AUTOR7",
-    "description": "Rename column IGUAL_A to IGUAL_A_AUTOR7"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -791,11 +706,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR7",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR7 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR7 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -880,39 +795,6 @@
     "description": "Match item Miguel Ximénez (Q922735) for cells containing \"XIMÉNEZ, Miguel\" in column AUTOR 8"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 8: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 8",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 8",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR8",
-    "columnInsertIndex": 20,
-    "description": "Create column IGUAL_A_AUTOR8 at index 20 based on column AUTOR 8 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -939,11 +821,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR8",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR8 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR8 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -988,39 +870,6 @@
     "description": "Reconcile cells in column AUTOR 9 to type Q5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 9: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 9",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 9",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR9",
-    "columnInsertIndex": 22,
-    "description": "Create column IGUAL_A_AUTOR9 at index 22 based on column AUTOR 9 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1047,11 +896,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR9",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR9 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR9 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1096,39 +945,6 @@
     "description": "Reconcile cells in column AUTOR 10 to type Q5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 10: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 10",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 10",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR10",
-    "columnInsertIndex": 24,
-    "description": "Create column IGUAL_A_AUTOR10 at index 24 based on column AUTOR 10 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1155,11 +971,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR10",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR10 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR10 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1244,39 +1060,6 @@
     "description": "Match item José Tomás (Q5945783) for cells containing \"TOMÁS, José\" in column AUTOR 11"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 11: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 11",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 11",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR11",
-    "columnInsertIndex": 26,
-    "description": "Create column IGUAL_A_AUTOR11 at index 26 based on column AUTOR 11 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1303,11 +1086,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR11",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR11 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR11 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1352,39 +1135,6 @@
     "description": "Reconcile cells in column AUTOR 12 to type Q5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 12: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 12",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 12",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR12",
-    "columnInsertIndex": 28,
-    "description": "Create column IGUAL_A_AUTOR12 at index 28 based on column AUTOR 12 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1411,11 +1161,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR12",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR12 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR12 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1500,39 +1250,6 @@
     "description": "Match item Antoni Coll i Pi (Q13426381) for cells containing \"COLL, Antonio\" in column AUTOR 13"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 12: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 12",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 13",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR13",
-    "columnInsertIndex": 30,
-    "description": "Create column IGUAL_A_AUTOR13 at index 30 based on column AUTOR 13 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1559,11 +1276,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR13",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR13 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR13 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1608,39 +1325,6 @@
     "description": "Reconcile cells in column AUTOR 14 to type Q5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 14: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 14",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 14",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR14",
-    "columnInsertIndex": 32,
-    "description": "Create column IGUAL_A_AUTOR14 at index 32 based on column AUTOR 14 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1667,11 +1351,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR14",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR14 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR14 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1756,39 +1440,6 @@
     "description": "Match item Francesc Escudero i Ribot (Q8962171) for cells containing \"ESCUDERO, Francisco\" in column AUTOR 15"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 15: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 15",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 15",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR15",
-    "columnInsertIndex": 34,
-    "description": "Create column IGUAL_A_AUTOR15 at index 34 based on column AUTOR 15 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1815,11 +1466,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR15",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR15 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR15 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -1864,39 +1515,6 @@
     "description": "Reconcile cells in column AUTOR 16 to type Q5"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 15: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "AUTOR 15",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 16",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR16",
-    "columnInsertIndex": 36,
-    "description": "Create column IGUAL_A_AUTOR16 at index 36 based on column AUTOR 16 using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -1923,11 +1541,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR16",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR16 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR16 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/recon",
@@ -2355,39 +1973,6 @@
     "description": "Match each cell to its best recon candidate in column NOMBRE"
   },
   {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "NOMBRE: judgment",
-          "expression": "forNonBlank(cell.recon.judgment, v, v, if(isNonBlank(value), \"(unreconciled)\", \"(blank)\"))",
-          "columnName": "NOMBRE",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "matched",
-                "l": "matched"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "NOMBRE",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_MONUMENTO",
-    "columnInsertIndex": 2,
-    "description": "Create column IGUAL_A_MONUMENTO at index 2 based on column NOMBRE using expression cell.recon.match.id"
-  },
-  {
     "op": "core/text-transform",
     "engineConfig": {
       "facets": [
@@ -2414,44 +1999,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_MONUMENTO",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_MONUMENTO using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 17",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR17",
-    "columnInsertIndex": 39,
-    "description": "Create column IGUAL_A_AUTOR17 at index 39 based on column AUTOR 17 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_MONUMENTO using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2480,44 +2032,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR17",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR17 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 18",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR18",
-    "columnInsertIndex": 41,
-    "description": "Create column IGUAL_A_AUTOR18 at index 41 based on column AUTOR 18 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR17 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2546,44 +2065,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR18",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR18 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 19",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR19",
-    "columnInsertIndex": 43,
-    "description": "Create column IGUAL_A_AUTOR19 at index 43 based on column AUTOR 19 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR18 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2612,44 +2098,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR19",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR19 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 20",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR20",
-    "columnInsertIndex": 45,
-    "description": "Create column IGUAL_A_AUTOR20 at index 45 based on column AUTOR 20 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR19 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2678,44 +2131,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR20",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR20 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 21",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR21",
-    "columnInsertIndex": 47,
-    "description": "Create column IGUAL_A_AUTOR21 at index 47 based on column AUTOR 21 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR20 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2744,44 +2164,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR21",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR21 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 22",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR22",
-    "columnInsertIndex": 49,
-    "description": "Create column IGUAL_A_AUTOR22 at index 49 based on column AUTOR 22 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR21 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2810,44 +2197,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR22",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR22 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 23",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR23",
-    "columnInsertIndex": 51,
-    "description": "Create column IGUAL_A_AUTOR23 at index 51 based on column AUTOR 23 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR22 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2876,44 +2230,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR23",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR23 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 24",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR24",
-    "columnInsertIndex": 53,
-    "description": "Create column IGUAL_A_AUTOR24 at index 53 based on column AUTOR 24 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR23 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -2942,44 +2263,11 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR24",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR24 using expression grel:\"https://www.wikidata.org/entity/\"+value"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [
-        {
-          "type": "list",
-          "name": "AUTOR 17",
-          "expression": "value",
-          "columnName": "AUTOR 17",
-          "invert": false,
-          "omitBlank": false,
-          "omitError": false,
-          "selection": [
-            {
-              "v": {
-                "v": "FUXÁ Y LEAL, Manuel",
-                "l": "FUXÁ Y LEAL, Manuel"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "baseColumnName": "AUTOR 25",
-    "expression": "cell.recon.match.id",
-    "onError": "set-to-blank",
-    "newColumnName": "IGUAL_A_AUTOR25",
-    "columnInsertIndex": 55,
-    "description": "Create column IGUAL_A_AUTOR25 at index 55 based on column AUTOR 25 using expression cell.recon.match.id"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR24 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
   },
   {
     "op": "core/text-transform",
@@ -3008,10 +2296,1643 @@
       "mode": "row-based"
     },
     "columnName": "IGUAL_A_AUTOR25",
-    "expression": "grel:\"https://www.wikidata.org/entity/\"+value",
+    "expression": "grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id",
     "onError": "keep-original",
     "repeat": false,
     "repeatCount": 10,
-    "description": "Text transform on cells in column IGUAL_A_AUTOR25 using expression grel:\"https://www.wikidata.org/entity/\"+value"
+    "description": "Text transform on cells in column IGUAL_A_AUTOR25 using expression grel:\"https://www.wikidata.org/entity/\"+cell.recon.match.id"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "grel:value.replace(' ','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE using expression grel:value.replace(' ','')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE-VIA",
+    "expression": "grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE-VIA using expression grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE using expression grel:value.replace(' ','').replace('ú','u').replace('ó','o').replace('é','e').replace('í','i')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "NOMBRE",
+    "expression": "grel:value.split(\" \").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "NOMBRE2",
+    "columnInsertIndex": 2,
+    "description": "Create column NOMBRE2 at index 2 based on column NOMBRE using expression grel:value.split(\" \").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 1",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 1",
+    "columnInsertIndex": 8,
+    "description": "Create column FAUTOR 1 at index 8 based on column AUTOR 1 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 2",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 2",
+    "columnInsertIndex": 11,
+    "description": "Create column FAUTOR 2 at index 11 based on column AUTOR 2 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 3",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 3",
+    "columnInsertIndex": 14,
+    "description": "Create column FAUTOR 3 at index 14 based on column AUTOR 3 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 4",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 4",
+    "columnInsertIndex": 17,
+    "description": "Create column FAUTOR 4 at index 17 based on column AUTOR 4 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 5",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 5",
+    "columnInsertIndex": 20,
+    "description": "Create column FAUTOR 5 at index 20 based on column AUTOR 5 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 6",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 6",
+    "columnInsertIndex": 23,
+    "description": "Create column FAUTOR 6 at index 23 based on column AUTOR 6 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 7",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 7",
+    "columnInsertIndex": 27,
+    "description": "Create column FAUTOR 7 at index 27 based on column AUTOR 7 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 8",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 8",
+    "columnInsertIndex": 30,
+    "description": "Create column FAUTOR 8 at index 30 based on column AUTOR 8 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 9",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 9",
+    "columnInsertIndex": 33,
+    "description": "Create column FAUTOR 9 at index 33 based on column AUTOR 9 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 10",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 10",
+    "columnInsertIndex": 36,
+    "description": "Create column FAUTOR 10 at index 36 based on column AUTOR 10 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 11",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 11",
+    "columnInsertIndex": 39,
+    "description": "Create column FAUTOR 11 at index 39 based on column AUTOR 11 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 12",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 12",
+    "columnInsertIndex": 42,
+    "description": "Create column FAUTOR 12 at index 42 based on column AUTOR 12 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 13",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 13",
+    "columnInsertIndex": 45,
+    "description": "Create column FAUTOR 13 at index 45 based on column AUTOR 13 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 14",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 14",
+    "columnInsertIndex": 48,
+    "description": "Create column FAUTOR 14 at index 48 based on column AUTOR 14 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 15",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 15",
+    "columnInsertIndex": 51,
+    "description": "Create column FAUTOR 15 at index 51 based on column AUTOR 15 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 16",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 16",
+    "columnInsertIndex": 54,
+    "description": "Create column FAUTOR 16 at index 54 based on column AUTOR 16 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 17",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 17",
+    "columnInsertIndex": 57,
+    "description": "Create column FAUTOR 17 at index 57 based on column AUTOR 17 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 18",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 18",
+    "columnInsertIndex": 60,
+    "description": "Create column FAUTOR 18 at index 60 based on column AUTOR 18 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 19",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 19",
+    "columnInsertIndex": 63,
+    "description": "Create column FAUTOR 19 at index 63 based on column AUTOR 19 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 20",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 20",
+    "columnInsertIndex": 66,
+    "description": "Create column FAUTOR 20 at index 66 based on column AUTOR 20 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 21",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 21",
+    "columnInsertIndex": 69,
+    "description": "Create column FAUTOR 21 at index 69 based on column AUTOR 21 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 22",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 22",
+    "columnInsertIndex": 72,
+    "description": "Create column FAUTOR 22 at index 72 based on column AUTOR 22 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 23",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 23",
+    "columnInsertIndex": 75,
+    "description": "Create column FAUTOR 23 at index 75 based on column AUTOR 23 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 24",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 24",
+    "columnInsertIndex": 78,
+    "description": "Create column FAUTOR 24 at index 78 based on column AUTOR 24 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "AUTOR 25",
+    "expression": "grel:value.split(\" \").join(\"\").split(\",\").join(\"\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FAUTOR 25",
+    "columnInsertIndex": 81,
+    "description": "Create column FAUTOR 25 at index 81 based on column AUTOR 25 using expression grel:value.split(\" \").join(\"\").split(\",\").join(\"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE2",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE2 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 1",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 1 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 2",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 2 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 3",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 3 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 4",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 4 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 5",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 5 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 6",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 6 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 7",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 7 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 8",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 8 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 9",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 9 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 10",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 10 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 11",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 11 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 12",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 12 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 13",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 13 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 14",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 14 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 15",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 15 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 16",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 16 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 17",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 17 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 18",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 18 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 19",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 19 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 20",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 20 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 21",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 21 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 22",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 22 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 23",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 23 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 24",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 24 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 25",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 25 using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 1",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 1 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 2",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 2 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 3",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 3 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 4",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 4 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 5",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 5 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 6",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 6 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 7",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 7 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 8",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 8 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 9",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 9 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 10",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 10 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 11",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 11 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 12",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 12 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 13",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 13 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 14",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 14 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 15",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 15 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 16",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 16 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 17",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 17 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 18",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 18 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 19",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 19 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 20",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 20 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 21",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 21 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 22",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 22 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 23",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 23 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 24",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 24 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 25",
+    "expression": "grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 25 using expression grel:value.replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "NOMBRE2",
+    "description": "Remove column NOMBRE2"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "SUBTIPO",
+    "expression": "grel:toLowercase(value).split(\" \").join(\"\").split(\",\").join(\"\").replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FSUBTIPO",
+    "columnInsertIndex": 4,
+    "description": "Create column FSUBTIPO at index 4 based on column SUBTIPO using expression grel:toLowercase(value).split(\" \").join(\"\").split(\",\").join(\"\").replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LATITUD",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LAT",
+    "columnInsertIndex": 99,
+    "description": "Create column LAT at index 99 based on column LATITUD using expression grel:value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LONGITUD",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LON",
+    "columnInsertIndex": 101,
+    "description": "Create column LON at index 101 based on column LONGITUD using expression grel:value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LAT",
+    "expression": "join ([coalesce(cells['LAT'].value,''),coalesce(cells['LON'].value,'')],',')",
+    "onError": "keep-original",
+    "newColumnName": "LATLON",
+    "columnInsertIndex": 100,
+    "description": "Create column LATLON at index 100 based on column LAT using expression join ([coalesce(cells['LAT'].value,''),coalesce(cells['LON'].value,'')],',')"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "PK",
+      "NOMBRE",
+      "IGUAL_A_MONUMENTO",
+      "SUBTIPO",
+      "FSUBTIPO",
+      "DESCRIPCION",
+      "FECHA",
+      "AUTOR 1",
+      "FAUTOR 1",
+      "IGUAL_A_AUTOR1",
+      "AUTOR 2",
+      "FAUTOR 2",
+      "IGUAL_A_AUTOR2",
+      "AUTOR 3",
+      "FAUTOR 3",
+      "IGUAL_A_AUTOR3",
+      "AUTOR 4",
+      "FAUTOR 4",
+      "IGUAL_A_AUTOR4",
+      "AUTOR 5",
+      "FAUTOR 5",
+      "IGUAL_A_AUTOR5",
+      "AUTOR 6",
+      "FAUTOR 6",
+      "IGUAL_A_AUTOR6",
+      "IGUAL_A",
+      "AUTOR 7",
+      "FAUTOR 7",
+      "IGUAL_A_AUTOR7",
+      "AUTOR 8",
+      "FAUTOR 8",
+      "IGUAL_A_AUTOR8",
+      "AUTOR 9",
+      "FAUTOR 9",
+      "IGUAL_A_AUTOR9",
+      "AUTOR 10",
+      "FAUTOR 10",
+      "IGUAL_A_AUTOR10",
+      "AUTOR 11",
+      "FAUTOR 11",
+      "IGUAL_A_AUTOR11",
+      "AUTOR 12",
+      "FAUTOR 12",
+      "IGUAL_A_AUTOR12",
+      "AUTOR 13",
+      "FAUTOR 13",
+      "IGUAL_A_AUTOR13",
+      "AUTOR 14",
+      "FAUTOR 14",
+      "IGUAL_A_AUTOR14",
+      "AUTOR 15",
+      "FAUTOR 15",
+      "IGUAL_A_AUTOR15",
+      "AUTOR 16",
+      "FAUTOR 16",
+      "IGUAL_A_AUTOR16",
+      "AUTOR 17",
+      "FAUTOR 17",
+      "IGUAL_A_AUTOR17",
+      "AUTOR 18",
+      "FAUTOR 18",
+      "IGUAL_A_AUTOR18",
+      "AUTOR 19",
+      "FAUTOR 19",
+      "IGUAL_A_AUTOR19",
+      "AUTOR 20",
+      "FAUTOR 20",
+      "IGUAL_A_AUTOR20",
+      "AUTOR 21",
+      "FAUTOR 21",
+      "IGUAL_A_AUTOR21",
+      "AUTOR 22",
+      "FAUTOR 22",
+      "IGUAL_A_AUTOR22",
+      "AUTOR 23",
+      "FAUTOR 23",
+      "IGUAL_A_AUTOR23",
+      "AUTOR 24",
+      "FAUTOR 24",
+      "IGUAL_A_AUTOR24",
+      "AUTOR 25",
+      "FAUTOR 25",
+      "IGUAL_A_AUTOR25",
+      "NOMBRE-VIA",
+      "CLASE-VIAL",
+      "NUM",
+      "LOCALIDAD",
+      "IGUAL_A_LOCALIDAD",
+      "PROVINCIA",
+      "CODIGO-POSTAL",
+      "COD-BARRIO",
+      "BARRIO",
+      "IGUAL_A_BARRIO",
+      "COD-DISTRITO",
+      "DISTRITO",
+      "IGUAL_A_DISTRITO",
+      "COORDENADA-X",
+      "COORDENADA-Y",
+      "LATITUD",
+      "LATLON",
+      "LONGITUD"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE-VIA",
+    "expression": "grel:value.replace(\"'\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE-VIA using expression grel:value.replace(\"'\",\"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 1",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 1 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 1",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 1 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 2",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 2 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 2",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 2 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 3",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 3 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 3",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 3 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 4",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 4 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 4",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 4 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 5",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 5 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 5",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 5 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 6",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 6 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 6",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 6 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 7",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 7 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 7",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 7 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 8",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 8 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 8",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 8 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 9",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 9 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 9",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 9 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 10",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 10 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 10",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 10 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 11",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 11 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 11",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 11 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 12",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 12 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 12",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 12 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 13",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 13 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 13",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 13 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 14",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 14 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 14",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 14 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "AUTOR 15",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column AUTOR 15 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FAUTOR 15",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column FAUTOR 15 using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NOMBRE using expression grel:value.replace(\"\\'\",\" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DESCRIPCION",
+    "expression": "grel:value.replace(\"\\'\",\" \")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column DESCRIPCION using expression grel:value.replace(\"\\'\",\" \")"
   }
 ]
