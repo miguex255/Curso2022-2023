@@ -85,103 +85,103 @@ map:om_003 rml:reference "FECHA" ;
 
 map:om_004 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 1}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_005 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 2}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_006 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 3}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_007 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 4}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_008 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 5}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_009 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 6}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_010 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 7}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_011 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 8}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_012 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 9}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_013 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 10}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_014 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 11}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_015 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 12}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_016 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 13}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_017 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 14}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_018 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 15}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_019 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 16}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_020 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 17}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_021 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 18}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_022 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 19}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_023 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 20}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_024 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 21}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_025 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 22}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_026 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 23}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_027 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 24}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_028 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Autor/{FAUTOR 25}" ;
-	rr:termType rr:Literal .
+	rr:termType rr:IRI .
 
 map:om_029 rdf:type rr:ObjectMap ;
 	rr:template "http://madridturistsites.es/resource/Via/{NOMBRE-VIA}" ;
