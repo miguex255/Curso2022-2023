@@ -1,6 +1,7 @@
 prefixes:
  rr: "http://www.w3.org/ns/r2rml#"
- ns: "http://madridturistsites.es/"
+ ns: "http://madridturistsites.es/resource"
+ nr: "http://madridturistsites.es/ontology"
  rml: "http://semweb.mmlab.be/ns/rml#"
  owl: "http://www.w3.org/2002/07/owl#"
  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -14,38 +15,38 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:$(FSUBTIPO)/$(PK)
     po:
-      - [a, ns:$(FSUBTIPO)~iri]
-      - [ns:nombre, $(NOMBRE)]
-      - [ns:descripcion,$(DESCRIPCION)]
-      - [ns:construidoEn,$(FECHA),xsd:integer]
-      - [ns:autor,ns:Autor/$(FAUTOR 1)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 2)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 3)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 4)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 5)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 6)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 7)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 8)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 9)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 10)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 11)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 12)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 13)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 14)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 15)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 16)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 17)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 18)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 19)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 20)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 21)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 22)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 23)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 24)~iri]
-      - [ns:autor,ns:Autor/$(FAUTOR 25)~iri]
-      - [ns:seEncuentraEn, ns:Via/$(NOMBRE-VIA)~iri]
-      - [ns:tieneLatitud, $(LATITUD),xsd:float]
-      - [ns:tieneLongitud, $(LONGITUD),xsd:float]
+      - [a, nr:$(FSUBTIPO)~iri]
+      - [nr:nombre, $(NOMBRE)]
+      - [nr:descripcion,$(DESCRIPCION)]
+      - [nr:construidoEn,$(FECHA),xsd:integer]
+      - [nr:autor,ns:Autor/$(FAUTOR 1)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 2)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 3)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 4)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 5)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 6)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 7)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 8)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 9)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 10)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 11)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 12)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 13)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 14)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 15)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 16)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 17)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 18)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 19)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 20)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 21)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 22)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 23)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 24)~iri]
+      - [nr:autor,ns:Autor/$(FAUTOR 25)~iri]
+      - [nr:seEncuentraEn, ns:Via/$(NOMBRE-VIA)~iri]
+      - [nr:tieneLatitud, $(LATITUD),xsd:float]
+      - [nr:tieneLongitud, $(LONGITUD),xsd:float]
       - [owl:sameAs, $(IGUAL_A_MONUMENTO)~iri] 
 
 
@@ -54,9 +55,9 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Via/$(NOMBRE-VIA)
     po:
-      - [a, ns:TipoVia/$(CLASE-VIAL)~iri]
-      - [ns:nombre, $(NOMBRE-VIA)]
-      - [ns:perteneceA, ns:Barrio/$(COD-BARRIO)~iri]
+      - [a, nr:TipoVia/$(CLASE-VIAL)~iri]
+      - [nr:nombre, $(NOMBRE-VIA)]
+      - [nr:perteneceA, ns:Barrio/$(COD-BARRIO)~iri]
 
 
   TriplesMapTipoVia:
@@ -64,17 +65,17 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:TipoVia/$(CLASE-VIAL)
     po:
-      - [a, ns:TipoVia~iri]
-      - [ns:nombre, $(CLASE-VIAL)]
+      - [a, nr:TipoVia~iri]
+      - [nr:nombre, $(CLASE-VIAL)]
 
   TriplesMapBarrio:
     sources:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Barrio/$(COD-BARRIO)
     po:
-      - [a, ns:Barrio~iri]
-      - [ns:nombre, $(BARRIO)]
-      - [ns:perteneceA, ns:Distrito/$(COD-DISTRITO)~iri]
+      - [a, nr:Barrio~iri]
+      - [nr:nombre, $(BARRIO)]
+      - [nr:perteneceA, ns:Distrito/$(COD-DISTRITO)~iri]
       - [owl:sameAs, $(IGUAL_A_BARRIO)~iri] 
 
   TriplesMapDistrito:
@@ -82,10 +83,10 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Distrito/$(COD-DISTRITO)
     po:
-      - [a, ns:Distrito~iri]
-      - [ns:nombre, $(DISTRITO)]
-      - [ns:perteneceA, ns:Localidad/$(LOCALIDAD)~iri]
-      - [ns:codigoPostal, $(CODIGO-POSTAL),xsd:integer]
+      - [a, nr:Distrito~iri]
+      - [nr:nombre, $(DISTRITO)]
+      - [nr:perteneceA, ns:Localidad/$(LOCALIDAD)~iri]
+      - [nr:codigoPostal, $(CODIGO-POSTAL),xsd:integer]
       - [owl:sameAs, $(IGUAL_A_DISTRITO)~iri]
 
 
@@ -94,8 +95,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Localidad/$(LOCALIDAD)
     po:
-      - [a, ns:Localidad~iri]
-      - [ns:nombre, $(LOCALIDAD)]
+      - [a, nr:Localidad~iri]
+      - [nr:nombre, $(LOCALIDAD)]
       - [owl:sameAs, $(IGUAL_A_LOCALIDAD)~iri] 
 
 
@@ -105,8 +106,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 1)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 1)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 1)]
       - [owl:sameAs, $(IGUAL_A_AUTOR1)~iri]
 
 
@@ -115,8 +116,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 2)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 2)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 2)]
       - [owl:sameAs, $(IGUAL_A_AUTOR2)~iri]
 
   TriplesMapAutor3:
@@ -124,8 +125,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 3)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 3)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 3)]
       - [owl:sameAs, $(IGUAL_A_AUTOR3)~iri]
 
   TriplesMapAutor:
@@ -133,8 +134,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 4)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 4)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 4)]
       - [owl:sameAs, $(IGUAL_A_AUTOR4)~iri]
 
 
@@ -143,8 +144,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 5)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 5)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 5)]
       - [owl:sameAs, $(IGUAL_A_AUTOR5)~iri]
       
     TriplesMapAutor:
@@ -152,8 +153,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 6)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 6)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 6)]
       - [owl:sameAs, $(IGUAL_A_AUTOR6)~iri]
 
     TriplesMapAutor:
@@ -161,8 +162,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 7)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 7)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 7)]
       - [owl:sameAs, $(IGUAL_A_AUTOR7)~iri]
 
       
@@ -171,8 +172,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 8)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 8)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 8)]
       - [owl:sameAs, $(IGUAL_A_AUTOR8)~iri]
 
 
@@ -181,8 +182,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 9)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 9)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 9)]
       - [owl:sameAs, $(IGUAL_A_AUTOR9)~iri]
 
 
@@ -191,8 +192,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 10)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 10)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 10)]
       - [owl:sameAs, $(IGUAL_A_AUTOR10)~iri]
 
     TriplesMapAutor:
@@ -200,8 +201,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 11)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 11)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 11)]
       - [owl:sameAs, $(IGUAL_A_AUTOR11)~iri]
 
     TriplesMapAutor:
@@ -209,16 +210,16 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 12)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 12)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 12)]
       - [owl:sameAs, $(IGUAL_A_AUTOR12)~iri]
     TriplesMapAutor:
     sources:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 13)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 13)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 13)]
       - [owl:sameAs, $(IGUAL_A_AUTOR13)~iri]
 
 
@@ -228,8 +229,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 14)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 14)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 14)]
       - [owl:sameAs, $(IGUAL_A_AUTOR14)~iri]
 
 
@@ -238,8 +239,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 15)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 15)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 15)]
       - [owl:sameAs, $(IGUAL_A_AUTOR15)~iri]
 
 
@@ -249,32 +250,32 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 16)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 16)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 16)]
       - [owl:sameAs, $(IGUAL_A_AUTOR16)~iri]
     TriplesMapAutor:
     sources:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 17)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 17)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 17)]
       - [owl:sameAs, $(IGUAL_A_AUTOR17)~iri]
     TriplesMapAutor:
     sources:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 18)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 18)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 18)]
       - [owl:sameAs, $(IGUAL_A_AUTOR18)~iri]
     TriplesMapAutor:
     sources:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 19)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 19)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 19)]
       - [owl:sameAs, $(IGUAL_A_AUTOR19)~iri]
 
 
@@ -283,8 +284,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 20)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 20)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 20)]
       - [owl:sameAs, $(IGUAL_A_AUTOR20)~iri]
 
 
@@ -293,8 +294,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 21)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 21)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 21)]
       - [owl:sameAs, $(IGUAL_A_AUTOR21)~iri]
 
 
@@ -303,8 +304,8 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 22)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 22)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 22)]
       - [owl:sameAs, $(IGUAL_A_AUTOR22)~iri]
 
 
@@ -313,16 +314,16 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 23)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 23)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 23)]
       - [owl:sameAs, $(IGUAL_A_AUTOR23)~iri]
     TriplesMapAutor:
     sources:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 24)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 24)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 24)]
       - [owl:sameAs, $(IGUAL_A_AUTOR24)~iri]
 
       
@@ -331,6 +332,6 @@ mappings:
       - [ Monumento-ciudad-madrid-updated-with-links.csv~csv]
     s: ns:Autor/$(FAUTOR 25)
     po:
-      - [a, ns:Autor~iri]
-      - [ns:nombre, $(AUTOR 25)]
+      - [a, nr:Autor~iri]
+      - [nr:nombre, $(AUTOR 25)]
       - [owl:sameAs, $(IGUAL_A_AUTOR25)~iri]
