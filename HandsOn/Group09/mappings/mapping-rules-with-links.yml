@@ -1,6 +1,7 @@
 prefixes:
  rr: "http://www.w3.org/ns/r2rml#"
  nr: "http://madridturistsites.es/ontology/"
+ nr2: "http://madridturistsites.es/resource/"
  ns: "http://madridturistsites.es/ontology/MadridTuristSites/"
  rml: "http://semweb.mmlab.be/ns/rml#"
  owl: "http://www.w3.org/2002/07/owl#"
@@ -19,32 +20,32 @@ mappings:
       - [nr:nombre, $(NOMBRE)]
       - [nr:descripcion,$(DESCRIPCION)]
       - [nr:construidoEn,$(FECHA),xsd:integer]
-      - [nr:autor,nr:Autor/$(FAUTOR 1)]
-      - [nr:autor,nr:Autor/$(FAUTOR 2)]
-      - [nr:autor,nr:Autor/$(FAUTOR 3)]
-      - [nr:autor,nr:Autor/$(FAUTOR 4)]
-      - [nr:autor,nr:Autor/$(FAUTOR 5)]
-      - [nr:autor,nr:Autor/$(FAUTOR 6)]
-      - [nr:autor,nr:Autor/$(FAUTOR 7)]
-      - [nr:autor,nr:Autor/$(FAUTOR 8)]
-      - [nr:autor,nr:Autor/$(FAUTOR 9)]
-      - [nr:autor,nr:Autor/$(FAUTOR 10)]
-      - [nr:autor,nr:Autor/$(FAUTOR 11)]
-      - [nr:autor,nr:Autor/$(FAUTOR 12)]
-      - [nr:autor,nr:Autor/$(FAUTOR 13)]
-      - [nr:autor,nr:Autor/$(FAUTOR 14)]
-      - [nr:autor,nr:Autor/$(FAUTOR 15)]
-      - [nr:autor,nr:Autor/$(FAUTOR 16)]
-      - [nr:autor,nr:Autor/$(FAUTOR 17)]
-      - [nr:autor,nr:Autor/$(FAUTOR 18)]
-      - [nr:autor,nr:Autor/$(FAUTOR 19)]
-      - [nr:autor,nr:Autor/$(FAUTOR 20)]
-      - [nr:autor,nr:Autor/$(FAUTOR 21)]
-      - [nr:autor,nr:Autor/$(FAUTOR 22)]
-      - [nr:autor,nr:Autor/$(FAUTOR 23)]
-      - [nr:autor,nr:Autor/$(FAUTOR 24)]
-      - [nr:autor,nr:Autor/$(FAUTOR 25)]
-      - [nr:seEncuentraEn, nr:Via/$(NOMBRE-VIA)~iri]
+      - [nr:autor,nr2:Autor/$(FAUTOR 1)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 2)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 3)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 4)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 5)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 6)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 7)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 8)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 9)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 10)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 11)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 12)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 13)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 14)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 15)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 16)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 17)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 18)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 19)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 20)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 21)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 22)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 23)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 24)]
+      - [nr:autor,nr2:Autor/$(FAUTOR 25)]
+      - [nr:seEncuentraEn, nr2:Via/$(NOMBRE-VIA)~iri]
       - [nr:tieneLatitud, $(LATITUD),xsd:float]
       - [nr:tieneLongitud, $(LONGITUD),xsd:float]
       - [owl:sameAs, $(IGUAL_A_MONUMENTO)~iri] 
@@ -57,7 +58,7 @@ mappings:
     po:
       - [a, nr:TipoVia/$(CLASE-VIAL)~iri]
       - [nr:nombre, $(NOMBRE-VIA)]
-      - [nr:perteneceA, nr:Barrio/$(COD-BARRIO)~iri]
+      - [nr:perteneceA, nr2:Barrio/$(COD-BARRIO)~iri]
 
 
   TriplesMapTipoVia:
@@ -75,7 +76,7 @@ mappings:
     po:
       - [a, nr:Barrio~iri]
       - [nr:nombre, $(BARRIO)]
-      - [nr:perteneceA, nr:Distrito/$(COD-DISTRITO)~iri]
+      - [nr:perteneceA, nr2:Distrito/$(COD-DISTRITO)~iri]
       - [owl:sameAs, $(IGUAL_A_BARRIO)~iri] 
 
   TriplesMapDistrito:
@@ -85,7 +86,7 @@ mappings:
     po:
       - [a, nr:Distrito~iri]
       - [nr:nombre, $(DISTRITO)]
-      - [nr:perteneceA, nr:Localidad/$(LOCALIDAD)~iri]
+      - [nr:perteneceA, nr2:Localidad/$(LOCALIDAD)~iri]
       - [nr:codigoPostal, $(CODIGO-POSTAL),xsd:integer]
       - [owl:sameAs, $(IGUAL_A_DISTRITO)~iri]
 
